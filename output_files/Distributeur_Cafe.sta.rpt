@@ -1,0 +1,1499 @@
+TimeQuest Timing Analyzer report for Distributeur_Cafe
+Sat Apr 06 10:48:51 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clk'
+ 13. Slow 1200mV 85C Model Hold: 'clk'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Slow 1200mV 85C Model Metastability Report
+ 20. Slow 1200mV 0C Model Fmax Summary
+ 21. Slow 1200mV 0C Model Setup Summary
+ 22. Slow 1200mV 0C Model Hold Summary
+ 23. Slow 1200mV 0C Model Recovery Summary
+ 24. Slow 1200mV 0C Model Removal Summary
+ 25. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 26. Slow 1200mV 0C Model Setup: 'clk'
+ 27. Slow 1200mV 0C Model Hold: 'clk'
+ 28. Slow 1200mV 0C Model Minimum Pulse Width: 'clk'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Slow 1200mV 0C Model Metastability Report
+ 34. Fast 1200mV 0C Model Setup Summary
+ 35. Fast 1200mV 0C Model Hold Summary
+ 36. Fast 1200mV 0C Model Recovery Summary
+ 37. Fast 1200mV 0C Model Removal Summary
+ 38. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 39. Fast 1200mV 0C Model Setup: 'clk'
+ 40. Fast 1200mV 0C Model Hold: 'clk'
+ 41. Fast 1200mV 0C Model Minimum Pulse Width: 'clk'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Fast 1200mV 0C Model Metastability Report
+ 47. Multicorner Timing Analysis Summary
+ 48. Setup Times
+ 49. Hold Times
+ 50. Clock to Output Times
+ 51. Minimum Clock to Output Times
+ 52. Board Trace Model Assignments
+ 53. Input Transition Times
+ 54. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 55. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 56. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 57. Setup Transfers
+ 58. Hold Transfers
+ 59. Report TCCS
+ 60. Report RSKM
+ 61. Unconstrained Paths
+ 62. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; Distributeur_Cafe                                  ;
+; Device Family      ; Cyclone IV GX                                      ;
+; Device Name        ; EP4CGX15BF14C6                                     ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 409.33 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; clk   ; -1.443 ; -14.165            ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; clk   ; 0.339 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; clk   ; -3.000 ; -19.000                          ;
++-------+--------+----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk'                                                                                                   ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -1.443 ; total_insere[0]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.065     ; 2.373      ;
+; -1.420 ; total_insere[3]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.065     ; 2.350      ;
+; -1.420 ; total_insere[3]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.065     ; 2.350      ;
+; -1.358 ; total_insere[0]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.065     ; 2.288      ;
+; -1.358 ; total_insere[0]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.065     ; 2.288      ;
+; -1.340 ; total_insere[0]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.590      ;
+; -1.340 ; total_insere[0]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.590      ;
+; -1.340 ; total_insere[0]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.590      ;
+; -1.340 ; total_insere[1]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.065     ; 2.270      ;
+; -1.340 ; total_insere[1]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.065     ; 2.270      ;
+; -1.263 ; total_insere[3]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.513      ;
+; -1.263 ; total_insere[3]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.513      ;
+; -1.263 ; total_insere[3]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.513      ;
+; -1.202 ; total_insere[1]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.452      ;
+; -1.202 ; total_insere[1]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.452      ;
+; -1.202 ; total_insere[1]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.452      ;
+; -1.197 ; total_insere[2]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.065     ; 2.127      ;
+; -1.162 ; total_insere[2]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.065     ; 2.092      ;
+; -1.066 ; total_insere[0]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.303      ; 2.364      ;
+; -1.003 ; total_insere[1]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.065     ; 1.933      ;
+; -0.984 ; total_insere[1]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.303      ; 2.282      ;
+; -0.961 ; total_insere[2]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.211      ;
+; -0.961 ; total_insere[2]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.211      ;
+; -0.961 ; total_insere[2]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.255      ; 2.211      ;
+; -0.907 ; total_insere[0]           ; total_insere[1]           ; clk          ; clk         ; 1.000        ; -0.065     ; 1.837      ;
+; -0.889 ; total_insere[1]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.066     ; 1.818      ;
+; -0.836 ; total_insere[3]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.064     ; 1.767      ;
+; -0.770 ; total_insere[0]           ; total_insere[0]           ; clk          ; clk         ; 1.000        ; -0.065     ; 1.700      ;
+; -0.744 ; total_insere[3]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.303      ; 2.042      ;
+; -0.691 ; total_insere[0]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.064     ; 1.622      ;
+; -0.681 ; reste_monnaie[0]~reg0     ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.065     ; 1.611      ;
+; -0.680 ; total_insere[1]           ; somme_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; -0.066     ; 1.609      ;
+; -0.637 ; total_insere[1]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.064     ; 1.568      ;
+; -0.610 ; total_insere[2]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.064     ; 1.541      ;
+; -0.508 ; total_insere[1]           ; total_insere[1]           ; clk          ; clk         ; 1.000        ; -0.065     ; 1.438      ;
+; -0.486 ; total_insere[2]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.303      ; 1.784      ;
+; -0.457 ; total_insere[2]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.065     ; 1.387      ;
+; -0.445 ; total_insere[3]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.066     ; 1.374      ;
+; -0.391 ; total_insere[3]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.065     ; 1.321      ;
+; -0.238 ; total_insere[0]           ; total_insere[2]           ; clk          ; clk         ; 1.000        ; -0.065     ; 1.168      ;
+; -0.168 ; total_insere[1]           ; total_insere[2]           ; clk          ; clk         ; 1.000        ; -0.065     ; 1.098      ;
+; -0.164 ; total_insere[0]           ; somme_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.066     ; 1.093      ;
+; -0.160 ; total_insere[2]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.066     ; 1.089      ;
+; -0.157 ; total_insere[3]           ; somme_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; -0.066     ; 1.086      ;
+; -0.155 ; total_insere[2]           ; somme_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; -0.066     ; 1.084      ;
+; 0.271  ; total_insere[2]           ; total_insere[2]           ; clk          ; clk         ; 1.000        ; -0.065     ; 0.659      ;
+; 0.277  ; monnaie_insuffisante~reg0 ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; -0.081     ; 0.637      ;
+; 0.293  ; monnaie_excedentaire~reg0 ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.065     ; 0.637      ;
+; 0.293  ; monnaie_exacte~reg0       ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.065     ; 0.637      ;
+; 0.293  ; cafe_delivre~reg0         ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.065     ; 0.637      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clk'                                                                                                   ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 0.339 ; monnaie_insuffisante~reg0 ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.081      ; 0.577      ;
+; 0.355 ; monnaie_excedentaire~reg0 ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.065      ; 0.577      ;
+; 0.355 ; monnaie_exacte~reg0       ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.065      ; 0.577      ;
+; 0.355 ; cafe_delivre~reg0         ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.577      ;
+; 0.355 ; total_insere[3]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.065      ; 0.577      ;
+; 0.355 ; total_insere[2]           ; total_insere[2]           ; clk          ; clk         ; 0.000        ; 0.065      ; 0.577      ;
+; 0.430 ; total_insere[2]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.652      ;
+; 0.442 ; total_insere[1]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 0.997      ;
+; 0.564 ; total_insere[2]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 1.119      ;
+; 0.586 ; total_insere[3]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 1.141      ;
+; 0.594 ; total_insere[0]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.065      ; 0.816      ;
+; 0.604 ; total_insere[3]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.449      ; 1.210      ;
+; 0.619 ; total_insere[2]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 1.174      ;
+; 0.658 ; total_insere[0]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 1.213      ;
+; 0.662 ; total_insere[3]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.065      ; 0.884      ;
+; 0.728 ; total_insere[1]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 1.283      ;
+; 0.754 ; total_insere[1]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 1.309      ;
+; 0.775 ; total_insere[1]           ; total_insere[2]           ; clk          ; clk         ; 0.000        ; 0.065      ; 0.997      ;
+; 0.776 ; total_insere[0]           ; somme_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.064      ; 0.997      ;
+; 0.777 ; total_insere[3]           ; somme_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.064      ; 0.998      ;
+; 0.777 ; total_insere[2]           ; somme_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.064      ; 0.998      ;
+; 0.781 ; total_insere[2]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.064      ; 1.002      ;
+; 0.791 ; total_insere[0]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 1.346      ;
+; 0.798 ; total_insere[0]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 1.353      ;
+; 0.812 ; total_insere[0]           ; total_insere[2]           ; clk          ; clk         ; 0.000        ; 0.065      ; 1.034      ;
+; 0.930 ; total_insere[2]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.449      ; 1.536      ;
+; 0.977 ; total_insere[3]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.064      ; 1.198      ;
+; 1.022 ; total_insere[2]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.065      ; 1.244      ;
+; 1.117 ; total_insere[1]           ; total_insere[1]           ; clk          ; clk         ; 0.000        ; 0.065      ; 1.339      ;
+; 1.157 ; total_insere[2]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.066      ; 1.380      ;
+; 1.181 ; reste_monnaie[0]~reg0     ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.065      ; 1.403      ;
+; 1.183 ; total_insere[1]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.449      ; 1.789      ;
+; 1.194 ; total_insere[1]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.065      ; 1.416      ;
+; 1.207 ; total_insere[1]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.066      ; 1.430      ;
+; 1.227 ; total_insere[0]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.449      ; 1.833      ;
+; 1.231 ; total_insere[0]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.065      ; 1.453      ;
+; 1.243 ; total_insere[0]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.066      ; 1.466      ;
+; 1.263 ; total_insere[1]           ; somme_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.064      ; 1.484      ;
+; 1.367 ; total_insere[0]           ; total_insere[0]           ; clk          ; clk         ; 0.000        ; 0.065      ; 1.589      ;
+; 1.397 ; total_insere[3]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.066      ; 1.620      ;
+; 1.457 ; total_insere[1]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.064      ; 1.678      ;
+; 1.470 ; total_insere[3]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 2.025      ;
+; 1.470 ; total_insere[3]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 2.025      ;
+; 1.476 ; total_insere[0]           ; total_insere[1]           ; clk          ; clk         ; 0.000        ; 0.065      ; 1.698      ;
+; 1.500 ; total_insere[1]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.065      ; 1.722      ;
+; 1.506 ; total_insere[2]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.065      ; 1.728      ;
+; 1.555 ; total_insere[3]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.065      ; 1.777      ;
+; 1.626 ; total_insere[2]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.398      ; 2.181      ;
+; 1.860 ; total_insere[1]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.065      ; 2.082      ;
+; 1.938 ; total_insere[0]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.065      ; 2.160      ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'clk'                                                               ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clk   ; Rise       ; clk                           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; cafe_delivre~reg0             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; monnaie_exacte~reg0           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; monnaie_excedentaire~reg0     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; monnaie_insuffisante~reg0     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[0]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[1]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[2]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[3]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[0]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[1]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[2]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[3]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[0]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[1]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[2]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[3]               ;
+; 0.193  ; 0.377        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_insuffisante~reg0     ;
+; 0.204  ; 0.388        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[1]~reg0         ;
+; 0.204  ; 0.388        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[2]~reg0         ;
+; 0.204  ; 0.388        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[3]~reg0         ;
+; 0.214  ; 0.398        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_excedentaire~reg0     ;
+; 0.214  ; 0.398        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[0]~reg0         ;
+; 0.214  ; 0.398        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[1]~reg0         ;
+; 0.214  ; 0.398        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[2]~reg0         ;
+; 0.214  ; 0.398        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[3]~reg0         ;
+; 0.215  ; 0.399        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; cafe_delivre~reg0             ;
+; 0.215  ; 0.399        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_exacte~reg0           ;
+; 0.215  ; 0.399        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[0]~reg0         ;
+; 0.215  ; 0.399        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[0]               ;
+; 0.215  ; 0.399        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[1]               ;
+; 0.215  ; 0.399        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[2]               ;
+; 0.215  ; 0.399        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[3]               ;
+; 0.326  ; 0.326        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|o                   ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|inclk[0]     ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|outclk       ;
+; 0.353  ; 0.353        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_insuffisante~reg0|clk ;
+; 0.364  ; 0.364        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[1]~reg0|clk     ;
+; 0.364  ; 0.364        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[2]~reg0|clk     ;
+; 0.364  ; 0.364        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[3]~reg0|clk     ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_excedentaire~reg0|clk ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[0]~reg0|clk     ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[1]~reg0|clk     ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[2]~reg0|clk     ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[3]~reg0|clk     ;
+; 0.375  ; 0.375        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; cafe_delivre~reg0|clk         ;
+; 0.375  ; 0.375        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_exacte~reg0|clk       ;
+; 0.375  ; 0.375        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[0]~reg0|clk     ;
+; 0.375  ; 0.375        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[0]|clk           ;
+; 0.375  ; 0.375        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[1]|clk           ;
+; 0.375  ; 0.375        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[2]|clk           ;
+; 0.375  ; 0.375        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[3]|clk           ;
+; 0.384  ; 0.600        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; monnaie_exacte~reg0           ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; cafe_delivre~reg0             ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; monnaie_excedentaire~reg0     ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[0]~reg0         ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[0]~reg0         ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[1]~reg0         ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[2]~reg0         ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[3]~reg0         ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[0]               ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[1]               ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[2]               ;
+; 0.385  ; 0.601        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[3]               ;
+; 0.395  ; 0.611        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[1]~reg0         ;
+; 0.395  ; 0.611        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[2]~reg0         ;
+; 0.395  ; 0.611        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[3]~reg0         ;
+; 0.407  ; 0.623        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; monnaie_insuffisante~reg0     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|i                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|i                   ;
+; 0.622  ; 0.622        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; monnaie_exacte~reg0|clk       ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; cafe_delivre~reg0|clk         ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; monnaie_excedentaire~reg0|clk ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[0]~reg0|clk     ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[0]~reg0|clk     ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[1]~reg0|clk     ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[2]~reg0|clk     ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[3]~reg0|clk     ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[0]|clk           ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[1]|clk           ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[2]|clk           ;
+; 0.623  ; 0.623        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[3]|clk           ;
+; 0.633  ; 0.633        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[1]~reg0|clk     ;
+; 0.633  ; 0.633        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[2]~reg0|clk     ;
+; 0.633  ; 0.633        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[3]~reg0|clk     ;
+; 0.645  ; 0.645        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; monnaie_insuffisante~reg0|clk ;
+; 0.662  ; 0.662        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|inclk[0]     ;
+; 0.662  ; 0.662        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|outclk       ;
+; 0.674  ; 0.674        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|o                   ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Setup Times                                                                      ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; bouton_Cafe_Lait     ; clk        ; 3.650 ; 4.135 ; Rise       ; clk             ;
+; bouton_Cafe_Noir     ; clk        ; 3.113 ; 3.581 ; Rise       ; clk             ;
+; bouton_Cappuccino    ; clk        ; 3.380 ; 3.785 ; Rise       ; clk             ;
+; bouton_Lait_Chocolat ; clk        ; 3.184 ; 3.643 ; Rise       ; clk             ;
+; piece_1DH            ; clk        ; 3.643 ; 4.032 ; Rise       ; clk             ;
+; piece_2DH            ; clk        ; 4.276 ; 4.683 ; Rise       ; clk             ;
+; piece_5DH            ; clk        ; 4.095 ; 4.507 ; Rise       ; clk             ;
+; piece_10DH           ; clk        ; 3.181 ; 3.612 ; Rise       ; clk             ;
+; reset                ; clk        ; 0.264 ; 0.428 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; bouton_Cafe_Lait     ; clk        ; -1.799 ; -2.235 ; Rise       ; clk             ;
+; bouton_Cafe_Noir     ; clk        ; -1.376 ; -1.839 ; Rise       ; clk             ;
+; bouton_Cappuccino    ; clk        ; -1.339 ; -1.825 ; Rise       ; clk             ;
+; bouton_Lait_Chocolat ; clk        ; -2.218 ; -2.641 ; Rise       ; clk             ;
+; piece_1DH            ; clk        ; -1.775 ; -2.167 ; Rise       ; clk             ;
+; piece_2DH            ; clk        ; -2.395 ; -2.874 ; Rise       ; clk             ;
+; piece_5DH            ; clk        ; -2.205 ; -2.612 ; Rise       ; clk             ;
+; piece_10DH           ; clk        ; -2.060 ; -2.479 ; Rise       ; clk             ;
+; reset                ; clk        ; -0.058 ; -0.223 ; Rise       ; clk             ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; cafe_delivre         ; clk        ; 6.321 ; 6.287 ; Rise       ; clk             ;
+; cafe_pret            ; clk        ; 6.331 ; 6.297 ; Rise       ; clk             ;
+; monnaie_exacte       ; clk        ; 6.089 ; 6.026 ; Rise       ; clk             ;
+; monnaie_excedentaire ; clk        ; 6.498 ; 6.508 ; Rise       ; clk             ;
+; monnaie_insuffisante ; clk        ; 6.136 ; 6.067 ; Rise       ; clk             ;
+; reste_monnaie[*]     ; clk        ; 7.283 ; 7.270 ; Rise       ; clk             ;
+;  reste_monnaie[0]    ; clk        ; 5.980 ; 5.909 ; Rise       ; clk             ;
+;  reste_monnaie[1]    ; clk        ; 7.283 ; 7.270 ; Rise       ; clk             ;
+;  reste_monnaie[2]    ; clk        ; 6.838 ; 6.830 ; Rise       ; clk             ;
+;  reste_monnaie[3]    ; clk        ; 6.001 ; 5.936 ; Rise       ; clk             ;
+; somme_monnaie[*]     ; clk        ; 6.626 ; 6.598 ; Rise       ; clk             ;
+;  somme_monnaie[0]    ; clk        ; 6.500 ; 6.440 ; Rise       ; clk             ;
+;  somme_monnaie[1]    ; clk        ; 6.626 ; 6.598 ; Rise       ; clk             ;
+;  somme_monnaie[2]    ; clk        ; 6.467 ; 6.458 ; Rise       ; clk             ;
+;  somme_monnaie[3]    ; clk        ; 6.521 ; 6.454 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                    ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; cafe_delivre         ; clk        ; 6.116 ; 6.080 ; Rise       ; clk             ;
+; cafe_pret            ; clk        ; 6.126 ; 6.090 ; Rise       ; clk             ;
+; monnaie_exacte       ; clk        ; 5.891 ; 5.826 ; Rise       ; clk             ;
+; monnaie_excedentaire ; clk        ; 6.284 ; 6.291 ; Rise       ; clk             ;
+; monnaie_insuffisante ; clk        ; 5.938 ; 5.867 ; Rise       ; clk             ;
+; reste_monnaie[*]     ; clk        ; 5.789 ; 5.717 ; Rise       ; clk             ;
+;  reste_monnaie[0]    ; clk        ; 5.789 ; 5.717 ; Rise       ; clk             ;
+;  reste_monnaie[1]    ; clk        ; 7.071 ; 7.057 ; Rise       ; clk             ;
+;  reste_monnaie[2]    ; clk        ; 6.643 ; 6.634 ; Rise       ; clk             ;
+;  reste_monnaie[3]    ; clk        ; 5.806 ; 5.739 ; Rise       ; clk             ;
+; somme_monnaie[*]     ; clk        ; 6.254 ; 6.218 ; Rise       ; clk             ;
+;  somme_monnaie[0]    ; clk        ; 6.280 ; 6.218 ; Rise       ; clk             ;
+;  somme_monnaie[1]    ; clk        ; 6.407 ; 6.376 ; Rise       ; clk             ;
+;  somme_monnaie[2]    ; clk        ; 6.254 ; 6.242 ; Rise       ; clk             ;
+;  somme_monnaie[3]    ; clk        ; 6.300 ; 6.232 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 457.67 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -1.185 ; -10.975           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.296 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -19.000                         ;
++-------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk'                                                                                                    ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -1.185 ; total_insere[0]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.057     ; 2.123      ;
+; -1.171 ; total_insere[3]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.057     ; 2.109      ;
+; -1.171 ; total_insere[3]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.057     ; 2.109      ;
+; -1.126 ; total_insere[0]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.057     ; 2.064      ;
+; -1.126 ; total_insere[0]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.057     ; 2.064      ;
+; -1.100 ; total_insere[1]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.057     ; 2.038      ;
+; -1.100 ; total_insere[1]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.057     ; 2.038      ;
+; -1.083 ; total_insere[0]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 2.312      ;
+; -1.083 ; total_insere[0]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 2.312      ;
+; -1.083 ; total_insere[0]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 2.312      ;
+; -1.026 ; total_insere[3]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 2.255      ;
+; -1.026 ; total_insere[3]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 2.255      ;
+; -1.026 ; total_insere[3]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 2.255      ;
+; -0.972 ; total_insere[2]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.057     ; 1.910      ;
+; -0.964 ; total_insere[1]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 2.193      ;
+; -0.964 ; total_insere[1]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 2.193      ;
+; -0.964 ; total_insere[1]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 2.193      ;
+; -0.948 ; total_insere[2]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.057     ; 1.886      ;
+; -0.846 ; total_insere[0]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.280      ; 2.121      ;
+; -0.797 ; total_insere[1]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.057     ; 1.735      ;
+; -0.778 ; total_insere[1]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.280      ; 2.053      ;
+; -0.762 ; total_insere[2]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 1.991      ;
+; -0.762 ; total_insere[2]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 1.991      ;
+; -0.762 ; total_insere[2]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.234      ; 1.991      ;
+; -0.699 ; total_insere[0]           ; total_insere[1]           ; clk          ; clk         ; 1.000        ; -0.057     ; 1.637      ;
+; -0.689 ; total_insere[1]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.058     ; 1.626      ;
+; -0.660 ; total_insere[3]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.056     ; 1.599      ;
+; -0.599 ; total_insere[0]           ; total_insere[0]           ; clk          ; clk         ; 1.000        ; -0.057     ; 1.537      ;
+; -0.571 ; total_insere[3]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.280      ; 1.846      ;
+; -0.503 ; total_insere[1]           ; somme_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; -0.058     ; 1.440      ;
+; -0.501 ; reste_monnaie[0]~reg0     ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.057     ; 1.439      ;
+; -0.493 ; total_insere[0]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.056     ; 1.432      ;
+; -0.479 ; total_insere[1]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.056     ; 1.418      ;
+; -0.429 ; total_insere[2]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.056     ; 1.368      ;
+; -0.366 ; total_insere[1]           ; total_insere[1]           ; clk          ; clk         ; 1.000        ; -0.057     ; 1.304      ;
+; -0.348 ; total_insere[2]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.280      ; 1.623      ;
+; -0.307 ; total_insere[2]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.057     ; 1.245      ;
+; -0.284 ; total_insere[3]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.058     ; 1.221      ;
+; -0.237 ; total_insere[3]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.057     ; 1.175      ;
+; -0.115 ; total_insere[0]           ; total_insere[2]           ; clk          ; clk         ; 1.000        ; -0.057     ; 1.053      ;
+; -0.043 ; total_insere[1]           ; total_insere[2]           ; clk          ; clk         ; 1.000        ; -0.057     ; 0.981      ;
+; -0.033 ; total_insere[0]           ; somme_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.058     ; 0.970      ;
+; -0.032 ; total_insere[2]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.058     ; 0.969      ;
+; -0.028 ; total_insere[3]           ; somme_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; -0.058     ; 0.965      ;
+; -0.027 ; total_insere[2]           ; somme_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; -0.058     ; 0.964      ;
+; 0.355  ; total_insere[2]           ; total_insere[2]           ; clk          ; clk         ; 1.000        ; -0.057     ; 0.583      ;
+; 0.362  ; monnaie_insuffisante~reg0 ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; -0.071     ; 0.562      ;
+; 0.376  ; monnaie_excedentaire~reg0 ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.057     ; 0.562      ;
+; 0.376  ; monnaie_exacte~reg0       ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.057     ; 0.562      ;
+; 0.376  ; cafe_delivre~reg0         ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.057     ; 0.562      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clk'                                                                                                    ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 0.296 ; monnaie_insuffisante~reg0 ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.071      ; 0.511      ;
+; 0.310 ; monnaie_excedentaire~reg0 ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; monnaie_exacte~reg0       ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; cafe_delivre~reg0         ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; total_insere[3]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.057      ; 0.511      ;
+; 0.310 ; total_insere[2]           ; total_insere[2]           ; clk          ; clk         ; 0.000        ; 0.057      ; 0.511      ;
+; 0.392 ; total_insere[2]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.057      ; 0.593      ;
+; 0.412 ; total_insere[1]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 0.917      ;
+; 0.516 ; total_insere[2]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.021      ;
+; 0.539 ; total_insere[0]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.057      ; 0.740      ;
+; 0.541 ; total_insere[3]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.046      ;
+; 0.546 ; total_insere[3]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.408      ; 1.098      ;
+; 0.568 ; total_insere[2]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.073      ;
+; 0.600 ; total_insere[3]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.057      ; 0.801      ;
+; 0.607 ; total_insere[0]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.112      ;
+; 0.660 ; total_insere[1]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.165      ;
+; 0.683 ; total_insere[1]           ; total_insere[2]           ; clk          ; clk         ; 0.000        ; 0.057      ; 0.884      ;
+; 0.683 ; total_insere[1]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.188      ;
+; 0.712 ; total_insere[3]           ; somme_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.056      ; 0.912      ;
+; 0.714 ; total_insere[2]           ; somme_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.056      ; 0.914      ;
+; 0.714 ; total_insere[0]           ; somme_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.056      ; 0.914      ;
+; 0.718 ; total_insere[2]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.056      ; 0.918      ;
+; 0.723 ; total_insere[0]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.228      ;
+; 0.723 ; total_insere[0]           ; total_insere[2]           ; clk          ; clk         ; 0.000        ; 0.057      ; 0.924      ;
+; 0.733 ; total_insere[0]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.238      ;
+; 0.824 ; total_insere[2]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.408      ; 1.376      ;
+; 0.890 ; total_insere[3]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.056      ; 1.090      ;
+; 0.921 ; total_insere[2]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.057      ; 1.122      ;
+; 1.011 ; total_insere[1]           ; total_insere[1]           ; clk          ; clk         ; 0.000        ; 0.057      ; 1.212      ;
+; 1.040 ; total_insere[2]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.058      ; 1.242      ;
+; 1.048 ; total_insere[1]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.408      ; 1.600      ;
+; 1.075 ; reste_monnaie[0]~reg0     ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.057      ; 1.276      ;
+; 1.080 ; total_insere[1]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.057      ; 1.281      ;
+; 1.090 ; total_insere[0]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.408      ; 1.642      ;
+; 1.091 ; total_insere[1]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.058      ; 1.293      ;
+; 1.120 ; total_insere[0]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.057      ; 1.321      ;
+; 1.153 ; total_insere[0]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.058      ; 1.355      ;
+; 1.172 ; total_insere[1]           ; somme_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.056      ; 1.372      ;
+; 1.245 ; total_insere[0]           ; total_insere[0]           ; clk          ; clk         ; 0.000        ; 0.057      ; 1.446      ;
+; 1.261 ; total_insere[3]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.058      ; 1.463      ;
+; 1.332 ; total_insere[3]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.837      ;
+; 1.332 ; total_insere[3]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.837      ;
+; 1.337 ; total_insere[0]           ; total_insere[1]           ; clk          ; clk         ; 0.000        ; 0.057      ; 1.538      ;
+; 1.347 ; total_insere[1]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.056      ; 1.547      ;
+; 1.353 ; total_insere[1]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.057      ; 1.554      ;
+; 1.376 ; total_insere[2]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.057      ; 1.577      ;
+; 1.410 ; total_insere[3]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.057      ; 1.611      ;
+; 1.474 ; total_insere[2]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.361      ; 1.979      ;
+; 1.682 ; total_insere[1]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.057      ; 1.883      ;
+; 1.755 ; total_insere[0]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.057      ; 1.956      ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'clk'                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clk   ; Rise       ; clk                           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; cafe_delivre~reg0             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; monnaie_exacte~reg0           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; monnaie_excedentaire~reg0     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; monnaie_insuffisante~reg0     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[0]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[1]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[2]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[3]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[0]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[1]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[2]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[3]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[0]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[1]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[2]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[3]               ;
+; 0.213  ; 0.397        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_insuffisante~reg0     ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; cafe_delivre~reg0             ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_excedentaire~reg0     ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[0]~reg0         ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[0]~reg0         ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[1]~reg0         ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[2]~reg0         ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[3]~reg0         ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[0]               ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[1]               ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[2]               ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[3]               ;
+; 0.219  ; 0.403        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_exacte~reg0           ;
+; 0.219  ; 0.403        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[1]~reg0         ;
+; 0.219  ; 0.403        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[2]~reg0         ;
+; 0.219  ; 0.403        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[3]~reg0         ;
+; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|o                   ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|inclk[0]     ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|outclk       ;
+; 0.373  ; 0.373        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_insuffisante~reg0|clk ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; cafe_delivre~reg0|clk         ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_excedentaire~reg0|clk ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[0]~reg0|clk     ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[0]~reg0|clk     ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[1]~reg0|clk     ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[2]~reg0|clk     ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[3]~reg0|clk     ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[0]|clk           ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[1]|clk           ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[2]|clk           ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[3]|clk           ;
+; 0.379  ; 0.379        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_exacte~reg0|clk       ;
+; 0.379  ; 0.595        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[1]~reg0         ;
+; 0.379  ; 0.379        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[1]~reg0|clk     ;
+; 0.379  ; 0.595        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[2]~reg0         ;
+; 0.379  ; 0.379        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[2]~reg0|clk     ;
+; 0.379  ; 0.595        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[3]~reg0         ;
+; 0.379  ; 0.379        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[3]~reg0|clk     ;
+; 0.380  ; 0.596        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; monnaie_exacte~reg0           ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; cafe_delivre~reg0             ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; monnaie_excedentaire~reg0     ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[0]~reg0         ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[0]~reg0         ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[1]~reg0         ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[2]~reg0         ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[3]~reg0         ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[0]               ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[1]               ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[2]               ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[3]               ;
+; 0.386  ; 0.602        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; monnaie_insuffisante~reg0     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|i                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|i                   ;
+; 0.619  ; 0.619        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[1]~reg0|clk     ;
+; 0.619  ; 0.619        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[2]~reg0|clk     ;
+; 0.619  ; 0.619        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[3]~reg0|clk     ;
+; 0.620  ; 0.620        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; monnaie_exacte~reg0|clk       ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; cafe_delivre~reg0|clk         ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; monnaie_excedentaire~reg0|clk ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[0]~reg0|clk     ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[0]~reg0|clk     ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[1]~reg0|clk     ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[2]~reg0|clk     ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[3]~reg0|clk     ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[0]|clk           ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[1]|clk           ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[2]|clk           ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[3]|clk           ;
+; 0.626  ; 0.626        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; monnaie_insuffisante~reg0|clk ;
+; 0.654  ; 0.654        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|inclk[0]     ;
+; 0.654  ; 0.654        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|outclk       ;
+; 0.656  ; 0.656        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|o                   ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Setup Times                                                                      ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; bouton_Cafe_Lait     ; clk        ; 3.235 ; 3.565 ; Rise       ; clk             ;
+; bouton_Cafe_Noir     ; clk        ; 2.727 ; 3.089 ; Rise       ; clk             ;
+; bouton_Cappuccino    ; clk        ; 2.939 ; 3.298 ; Rise       ; clk             ;
+; bouton_Lait_Chocolat ; clk        ; 2.807 ; 3.130 ; Rise       ; clk             ;
+; piece_1DH            ; clk        ; 3.198 ; 3.493 ; Rise       ; clk             ;
+; piece_2DH            ; clk        ; 3.785 ; 4.068 ; Rise       ; clk             ;
+; piece_5DH            ; clk        ; 3.617 ; 3.913 ; Rise       ; clk             ;
+; piece_10DH           ; clk        ; 2.796 ; 3.106 ; Rise       ; clk             ;
+; reset                ; clk        ; 0.263 ; 0.433 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; bouton_Cafe_Lait     ; clk        ; -1.538 ; -1.882 ; Rise       ; clk             ;
+; bouton_Cafe_Noir     ; clk        ; -1.155 ; -1.527 ; Rise       ; clk             ;
+; bouton_Cappuccino    ; clk        ; -1.117 ; -1.501 ; Rise       ; clk             ;
+; bouton_Lait_Chocolat ; clk        ; -1.918 ; -2.248 ; Rise       ; clk             ;
+; piece_1DH            ; clk        ; -1.499 ; -1.815 ; Rise       ; clk             ;
+; piece_2DH            ; clk        ; -2.093 ; -2.445 ; Rise       ; clk             ;
+; piece_5DH            ; clk        ; -1.888 ; -2.244 ; Rise       ; clk             ;
+; piece_10DH           ; clk        ; -1.762 ; -2.122 ; Rise       ; clk             ;
+; reset                ; clk        ; -0.077 ; -0.247 ; Rise       ; clk             ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; cafe_delivre         ; clk        ; 5.688 ; 5.599 ; Rise       ; clk             ;
+; cafe_pret            ; clk        ; 5.698 ; 5.609 ; Rise       ; clk             ;
+; monnaie_exacte       ; clk        ; 5.455 ; 5.373 ; Rise       ; clk             ;
+; monnaie_excedentaire ; clk        ; 5.847 ; 5.791 ; Rise       ; clk             ;
+; monnaie_insuffisante ; clk        ; 5.508 ; 5.412 ; Rise       ; clk             ;
+; reste_monnaie[*]     ; clk        ; 6.506 ; 6.458 ; Rise       ; clk             ;
+;  reste_monnaie[0]    ; clk        ; 5.370 ; 5.263 ; Rise       ; clk             ;
+;  reste_monnaie[1]    ; clk        ; 6.506 ; 6.458 ; Rise       ; clk             ;
+;  reste_monnaie[2]    ; clk        ; 6.081 ; 6.067 ; Rise       ; clk             ;
+;  reste_monnaie[3]    ; clk        ; 5.358 ; 5.299 ; Rise       ; clk             ;
+; somme_monnaie[*]     ; clk        ; 5.961 ; 5.880 ; Rise       ; clk             ;
+;  somme_monnaie[0]    ; clk        ; 5.823 ; 5.754 ; Rise       ; clk             ;
+;  somme_monnaie[1]    ; clk        ; 5.961 ; 5.880 ; Rise       ; clk             ;
+;  somme_monnaie[2]    ; clk        ; 5.812 ; 5.737 ; Rise       ; clk             ;
+;  somme_monnaie[3]    ; clk        ; 5.836 ; 5.768 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                    ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; cafe_delivre         ; clk        ; 5.503 ; 5.413 ; Rise       ; clk             ;
+; cafe_pret            ; clk        ; 5.513 ; 5.423 ; Rise       ; clk             ;
+; monnaie_exacte       ; clk        ; 5.275 ; 5.193 ; Rise       ; clk             ;
+; monnaie_excedentaire ; clk        ; 5.656 ; 5.599 ; Rise       ; clk             ;
+; monnaie_insuffisante ; clk        ; 5.329 ; 5.233 ; Rise       ; clk             ;
+; reste_monnaie[*]     ; clk        ; 5.180 ; 5.090 ; Rise       ; clk             ;
+;  reste_monnaie[0]    ; clk        ; 5.198 ; 5.090 ; Rise       ; clk             ;
+;  reste_monnaie[1]    ; clk        ; 6.313 ; 6.265 ; Rise       ; clk             ;
+;  reste_monnaie[2]    ; clk        ; 5.904 ; 5.890 ; Rise       ; clk             ;
+;  reste_monnaie[3]    ; clk        ; 5.180 ; 5.121 ; Rise       ; clk             ;
+; somme_monnaie[*]     ; clk        ; 5.623 ; 5.547 ; Rise       ; clk             ;
+;  somme_monnaie[0]    ; clk        ; 5.627 ; 5.558 ; Rise       ; clk             ;
+;  somme_monnaie[1]    ; clk        ; 5.765 ; 5.684 ; Rise       ; clk             ;
+;  somme_monnaie[2]    ; clk        ; 5.623 ; 5.547 ; Rise       ; clk             ;
+;  somme_monnaie[3]    ; clk        ; 5.640 ; 5.572 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -0.365 ; -2.381            ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.177 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -19.504                         ;
++-------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk'                                                                                                    ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -0.365 ; total_insere[0]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.037     ; 1.315      ;
+; -0.349 ; total_insere[3]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.037     ; 1.299      ;
+; -0.349 ; total_insere[3]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.037     ; 1.299      ;
+; -0.321 ; total_insere[0]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.446      ;
+; -0.321 ; total_insere[0]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.446      ;
+; -0.321 ; total_insere[0]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.446      ;
+; -0.307 ; total_insere[0]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.037     ; 1.257      ;
+; -0.307 ; total_insere[0]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.037     ; 1.257      ;
+; -0.301 ; total_insere[1]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.037     ; 1.251      ;
+; -0.301 ; total_insere[1]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.037     ; 1.251      ;
+; -0.278 ; total_insere[3]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.403      ;
+; -0.278 ; total_insere[3]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.403      ;
+; -0.278 ; total_insere[3]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.403      ;
+; -0.247 ; total_insere[1]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.372      ;
+; -0.247 ; total_insere[1]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.372      ;
+; -0.247 ; total_insere[1]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.372      ;
+; -0.224 ; total_insere[2]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.037     ; 1.174      ;
+; -0.200 ; total_insere[2]           ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.037     ; 1.150      ;
+; -0.138 ; total_insere[0]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.160      ; 1.285      ;
+; -0.121 ; total_insere[1]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.038     ; 1.070      ;
+; -0.116 ; total_insere[1]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.037     ; 1.066      ;
+; -0.093 ; total_insere[2]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.218      ;
+; -0.093 ; total_insere[2]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.218      ;
+; -0.093 ; total_insere[2]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; 0.138      ; 1.218      ;
+; -0.093 ; total_insere[1]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.160      ; 1.240      ;
+; -0.064 ; total_insere[0]           ; total_insere[1]           ; clk          ; clk         ; 1.000        ; -0.037     ; 1.014      ;
+; -0.026 ; total_insere[3]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.037     ; 0.976      ;
+; -0.006 ; total_insere[1]           ; somme_monnaie[1]~reg0     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.955      ;
+; 0.006  ; total_insere[0]           ; total_insere[0]           ; clk          ; clk         ; 1.000        ; -0.037     ; 0.944      ;
+; 0.032  ; total_insere[3]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.160      ; 1.115      ;
+; 0.040  ; total_insere[0]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.037     ; 0.910      ;
+; 0.054  ; reste_monnaie[0]~reg0     ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.037     ; 0.896      ;
+; 0.066  ; total_insere[1]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.037     ; 0.884      ;
+; 0.083  ; total_insere[2]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.037     ; 0.867      ;
+; 0.166  ; total_insere[1]           ; total_insere[1]           ; clk          ; clk         ; 1.000        ; -0.037     ; 0.784      ;
+; 0.176  ; total_insere[2]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; 0.160      ; 0.971      ;
+; 0.178  ; total_insere[3]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.038     ; 0.771      ;
+; 0.180  ; total_insere[2]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.037     ; 0.770      ;
+; 0.219  ; total_insere[3]           ; total_insere[3]           ; clk          ; clk         ; 1.000        ; -0.037     ; 0.731      ;
+; 0.312  ; total_insere[0]           ; total_insere[2]           ; clk          ; clk         ; 1.000        ; -0.037     ; 0.638      ;
+; 0.332  ; total_insere[0]           ; somme_monnaie[0]~reg0     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.617      ;
+; 0.332  ; total_insere[2]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.038     ; 0.617      ;
+; 0.336  ; total_insere[3]           ; somme_monnaie[3]~reg0     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.613      ;
+; 0.337  ; total_insere[2]           ; somme_monnaie[2]~reg0     ; clk          ; clk         ; 1.000        ; -0.038     ; 0.612      ;
+; 0.343  ; total_insere[1]           ; total_insere[2]           ; clk          ; clk         ; 1.000        ; -0.037     ; 0.607      ;
+; 0.591  ; monnaie_insuffisante~reg0 ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 1.000        ; -0.046     ; 0.350      ;
+; 0.591  ; total_insere[2]           ; total_insere[2]           ; clk          ; clk         ; 1.000        ; -0.037     ; 0.359      ;
+; 0.600  ; monnaie_excedentaire~reg0 ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 1.000        ; -0.037     ; 0.350      ;
+; 0.600  ; monnaie_exacte~reg0       ; monnaie_exacte~reg0       ; clk          ; clk         ; 1.000        ; -0.037     ; 0.350      ;
+; 0.600  ; cafe_delivre~reg0         ; cafe_delivre~reg0         ; clk          ; clk         ; 1.000        ; -0.037     ; 0.350      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clk'                                                                                                    ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; 0.177 ; monnaie_insuffisante~reg0 ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.046      ; 0.307      ;
+; 0.186 ; monnaie_excedentaire~reg0 ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; monnaie_exacte~reg0       ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; cafe_delivre~reg0         ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; total_insere[3]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.186 ; total_insere[2]           ; total_insere[2]           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
+; 0.226 ; total_insere[1]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 0.529      ;
+; 0.229 ; total_insere[2]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.037      ; 0.350      ;
+; 0.293 ; total_insere[2]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 0.596      ;
+; 0.307 ; total_insere[3]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 0.610      ;
+; 0.317 ; total_insere[3]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.243      ; 0.644      ;
+; 0.320 ; total_insere[0]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.441      ;
+; 0.321 ; total_insere[2]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 0.624      ;
+; 0.348 ; total_insere[0]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 0.651      ;
+; 0.360 ; total_insere[3]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.037      ; 0.481      ;
+; 0.372 ; total_insere[1]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 0.675      ;
+; 0.398 ; total_insere[1]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 0.701      ;
+; 0.405 ; total_insere[0]           ; somme_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.525      ;
+; 0.406 ; total_insere[2]           ; somme_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.526      ;
+; 0.407 ; total_insere[3]           ; somme_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.527      ;
+; 0.407 ; total_insere[1]           ; total_insere[2]           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.528      ;
+; 0.407 ; total_insere[0]           ; reste_monnaie[3]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 0.710      ;
+; 0.410 ; total_insere[2]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.036      ; 0.530      ;
+; 0.423 ; total_insere[0]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 0.726      ;
+; 0.428 ; total_insere[0]           ; total_insere[2]           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.549      ;
+; 0.516 ; total_insere[3]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.036      ; 0.636      ;
+; 0.526 ; total_insere[2]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.243      ; 0.853      ;
+; 0.543 ; total_insere[2]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.664      ;
+; 0.572 ; total_insere[1]           ; total_insere[1]           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.693      ;
+; 0.612 ; total_insere[2]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.733      ;
+; 0.624 ; reste_monnaie[0]~reg0     ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.745      ;
+; 0.630 ; total_insere[1]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.751      ;
+; 0.651 ; total_insere[1]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.037      ; 0.772      ;
+; 0.655 ; total_insere[1]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.243      ; 0.982      ;
+; 0.658 ; total_insere[0]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.779      ;
+; 0.660 ; total_insere[0]           ; cafe_delivre~reg0         ; clk          ; clk         ; 0.000        ; 0.037      ; 0.781      ;
+; 0.660 ; total_insere[0]           ; monnaie_insuffisante~reg0 ; clk          ; clk         ; 0.000        ; 0.243      ; 0.987      ;
+; 0.701 ; total_insere[1]           ; somme_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.821      ;
+; 0.705 ; total_insere[0]           ; total_insere[0]           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.826      ;
+; 0.763 ; total_insere[0]           ; total_insere[1]           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.884      ;
+; 0.763 ; total_insere[3]           ; monnaie_exacte~reg0       ; clk          ; clk         ; 0.000        ; 0.037      ; 0.884      ;
+; 0.790 ; total_insere[3]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 1.093      ;
+; 0.790 ; total_insere[3]           ; reste_monnaie[2]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 1.093      ;
+; 0.794 ; total_insere[2]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.915      ;
+; 0.800 ; total_insere[1]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.037      ; 0.921      ;
+; 0.810 ; total_insere[1]           ; monnaie_excedentaire~reg0 ; clk          ; clk         ; 0.000        ; 0.036      ; 0.930      ;
+; 0.837 ; total_insere[3]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.037      ; 0.958      ;
+; 0.872 ; total_insere[2]           ; reste_monnaie[1]~reg0     ; clk          ; clk         ; 0.000        ; 0.219      ; 1.175      ;
+; 1.009 ; total_insere[1]           ; reste_monnaie[0]~reg0     ; clk          ; clk         ; 0.000        ; 0.037      ; 1.130      ;
+; 1.022 ; total_insere[0]           ; total_insere[3]           ; clk          ; clk         ; 0.000        ; 0.037      ; 1.143      ;
++-------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'clk'                                                                ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clk   ; Rise       ; clk                           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; cafe_delivre~reg0             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; monnaie_exacte~reg0           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; monnaie_excedentaire~reg0     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; monnaie_insuffisante~reg0     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[0]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[1]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[2]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; reste_monnaie[3]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[0]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[1]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[2]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; somme_monnaie[3]~reg0         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[0]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[1]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[2]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clk   ; Rise       ; total_insere[3]               ;
+; -0.056 ; 0.128        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_insuffisante~reg0     ;
+; -0.045 ; 0.139        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[1]~reg0         ;
+; -0.045 ; 0.139        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[2]~reg0         ;
+; -0.045 ; 0.139        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[3]~reg0         ;
+; -0.027 ; 0.157        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_exacte~reg0           ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; cafe_delivre~reg0             ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_excedentaire~reg0     ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[0]~reg0         ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[0]~reg0         ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[1]~reg0         ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[2]~reg0         ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[3]~reg0         ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[0]               ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[1]               ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[2]               ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[3]               ;
+; 0.124  ; 0.124        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_insuffisante~reg0|clk ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|o                   ;
+; 0.135  ; 0.135        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[1]~reg0|clk     ;
+; 0.135  ; 0.135        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[2]~reg0|clk     ;
+; 0.135  ; 0.135        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[3]~reg0|clk     ;
+; 0.139  ; 0.139        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|inclk[0]     ;
+; 0.139  ; 0.139        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~inputclkctrl|outclk       ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; cafe_delivre~reg0|clk         ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_exacte~reg0|clk       ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; monnaie_excedentaire~reg0|clk ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; reste_monnaie[0]~reg0|clk     ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[0]~reg0|clk     ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[1]~reg0|clk     ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[2]~reg0|clk     ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; somme_monnaie[3]~reg0|clk     ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[0]|clk           ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[1]|clk           ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[2]|clk           ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; total_insere[3]|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|i                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~input|i                   ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; cafe_delivre~reg0             ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; monnaie_exacte~reg0           ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; monnaie_excedentaire~reg0     ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[0]~reg0         ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[0]~reg0         ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[1]~reg0         ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[2]~reg0         ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[3]~reg0         ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[0]               ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[1]               ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[2]               ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; total_insere[3]               ;
+; 0.643  ; 0.859        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[1]~reg0         ;
+; 0.643  ; 0.859        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[2]~reg0         ;
+; 0.643  ; 0.859        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[3]~reg0         ;
+; 0.654  ; 0.870        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; monnaie_insuffisante~reg0     ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; cafe_delivre~reg0|clk         ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; monnaie_excedentaire~reg0|clk ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[0]~reg0|clk     ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[0]~reg0|clk     ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[1]~reg0|clk     ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[2]~reg0|clk     ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; somme_monnaie[3]~reg0|clk     ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[0]|clk           ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[1]|clk           ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[2]|clk           ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; total_insere[3]|clk           ;
+; 0.847  ; 0.847        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; monnaie_exacte~reg0|clk       ;
+; 0.861  ; 0.861        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|inclk[0]     ;
+; 0.861  ; 0.861        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~inputclkctrl|outclk       ;
+; 0.865  ; 0.865        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[1]~reg0|clk     ;
+; 0.865  ; 0.865        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[2]~reg0|clk     ;
+; 0.865  ; 0.865        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; reste_monnaie[3]~reg0|clk     ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~input|o                   ;
+; 0.876  ; 0.876        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; monnaie_insuffisante~reg0|clk ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Setup Times                                                                      ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; bouton_Cafe_Lait     ; clk        ; 2.006 ; 2.685 ; Rise       ; clk             ;
+; bouton_Cafe_Noir     ; clk        ; 1.730 ; 2.335 ; Rise       ; clk             ;
+; bouton_Cappuccino    ; clk        ; 1.899 ; 2.411 ; Rise       ; clk             ;
+; bouton_Lait_Chocolat ; clk        ; 1.734 ; 2.379 ; Rise       ; clk             ;
+; piece_1DH            ; clk        ; 2.017 ; 2.574 ; Rise       ; clk             ;
+; piece_2DH            ; clk        ; 2.380 ; 2.975 ; Rise       ; clk             ;
+; piece_5DH            ; clk        ; 2.285 ; 2.871 ; Rise       ; clk             ;
+; piece_10DH           ; clk        ; 1.782 ; 2.381 ; Rise       ; clk             ;
+; reset                ; clk        ; 0.189 ; 0.484 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; bouton_Cafe_Lait     ; clk        ; -1.008 ; -1.603 ; Rise       ; clk             ;
+; bouton_Cafe_Noir     ; clk        ; -0.782 ; -1.356 ; Rise       ; clk             ;
+; bouton_Cappuccino    ; clk        ; -0.755 ; -1.352 ; Rise       ; clk             ;
+; bouton_Lait_Chocolat ; clk        ; -1.216 ; -1.805 ; Rise       ; clk             ;
+; piece_1DH            ; clk        ; -0.975 ; -1.526 ; Rise       ; clk             ;
+; piece_2DH            ; clk        ; -1.322 ; -1.955 ; Rise       ; clk             ;
+; piece_5DH            ; clk        ; -1.258 ; -1.789 ; Rise       ; clk             ;
+; piece_10DH           ; clk        ; -1.182 ; -1.720 ; Rise       ; clk             ;
+; reset                ; clk        ; -0.068 ; -0.368 ; Rise       ; clk             ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; cafe_delivre         ; clk        ; 3.682 ; 3.772 ; Rise       ; clk             ;
+; cafe_pret            ; clk        ; 3.692 ; 3.782 ; Rise       ; clk             ;
+; monnaie_exacte       ; clk        ; 3.550 ; 3.599 ; Rise       ; clk             ;
+; monnaie_excedentaire ; clk        ; 3.865 ; 3.913 ; Rise       ; clk             ;
+; monnaie_insuffisante ; clk        ; 3.564 ; 3.600 ; Rise       ; clk             ;
+; reste_monnaie[*]     ; clk        ; 4.370 ; 4.434 ; Rise       ; clk             ;
+;  reste_monnaie[0]    ; clk        ; 3.488 ; 3.534 ; Rise       ; clk             ;
+;  reste_monnaie[1]    ; clk        ; 4.370 ; 4.434 ; Rise       ; clk             ;
+;  reste_monnaie[2]    ; clk        ; 4.123 ; 4.161 ; Rise       ; clk             ;
+;  reste_monnaie[3]    ; clk        ; 3.495 ; 3.516 ; Rise       ; clk             ;
+; somme_monnaie[*]     ; clk        ; 3.931 ; 3.981 ; Rise       ; clk             ;
+;  somme_monnaie[0]    ; clk        ; 3.794 ; 3.869 ; Rise       ; clk             ;
+;  somme_monnaie[1]    ; clk        ; 3.931 ; 3.981 ; Rise       ; clk             ;
+;  somme_monnaie[2]    ; clk        ; 3.826 ; 3.857 ; Rise       ; clk             ;
+;  somme_monnaie[3]    ; clk        ; 3.807 ; 3.886 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                    ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; cafe_delivre         ; clk        ; 3.560 ; 3.646 ; Rise       ; clk             ;
+; cafe_pret            ; clk        ; 3.570 ; 3.656 ; Rise       ; clk             ;
+; monnaie_exacte       ; clk        ; 3.431 ; 3.477 ; Rise       ; clk             ;
+; monnaie_excedentaire ; clk        ; 3.738 ; 3.783 ; Rise       ; clk             ;
+; monnaie_insuffisante ; clk        ; 3.446 ; 3.480 ; Rise       ; clk             ;
+; reste_monnaie[*]     ; clk        ; 3.374 ; 3.398 ; Rise       ; clk             ;
+;  reste_monnaie[0]    ; clk        ; 3.374 ; 3.417 ; Rise       ; clk             ;
+;  reste_monnaie[1]    ; clk        ; 4.244 ; 4.305 ; Rise       ; clk             ;
+;  reste_monnaie[2]    ; clk        ; 4.007 ; 4.043 ; Rise       ; clk             ;
+;  reste_monnaie[3]    ; clk        ; 3.379 ; 3.398 ; Rise       ; clk             ;
+; somme_monnaie[*]     ; clk        ; 3.664 ; 3.729 ; Rise       ; clk             ;
+;  somme_monnaie[0]    ; clk        ; 3.664 ; 3.735 ; Rise       ; clk             ;
+;  somme_monnaie[1]    ; clk        ; 3.801 ; 3.847 ; Rise       ; clk             ;
+;  somme_monnaie[2]    ; clk        ; 3.700 ; 3.729 ; Rise       ; clk             ;
+;  somme_monnaie[3]    ; clk        ; 3.677 ; 3.751 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.443  ; 0.177 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -1.443  ; 0.177 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -14.165 ; 0.0   ; 0.0      ; 0.0     ; -19.504             ;
+;  clk             ; -14.165 ; 0.000 ; N/A      ; N/A     ; -19.504             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------------+
+; Setup Times                                                                      ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; bouton_Cafe_Lait     ; clk        ; 3.650 ; 4.135 ; Rise       ; clk             ;
+; bouton_Cafe_Noir     ; clk        ; 3.113 ; 3.581 ; Rise       ; clk             ;
+; bouton_Cappuccino    ; clk        ; 3.380 ; 3.785 ; Rise       ; clk             ;
+; bouton_Lait_Chocolat ; clk        ; 3.184 ; 3.643 ; Rise       ; clk             ;
+; piece_1DH            ; clk        ; 3.643 ; 4.032 ; Rise       ; clk             ;
+; piece_2DH            ; clk        ; 4.276 ; 4.683 ; Rise       ; clk             ;
+; piece_5DH            ; clk        ; 4.095 ; 4.507 ; Rise       ; clk             ;
+; piece_10DH           ; clk        ; 3.181 ; 3.612 ; Rise       ; clk             ;
+; reset                ; clk        ; 0.264 ; 0.484 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; bouton_Cafe_Lait     ; clk        ; -1.008 ; -1.603 ; Rise       ; clk             ;
+; bouton_Cafe_Noir     ; clk        ; -0.782 ; -1.356 ; Rise       ; clk             ;
+; bouton_Cappuccino    ; clk        ; -0.755 ; -1.352 ; Rise       ; clk             ;
+; bouton_Lait_Chocolat ; clk        ; -1.216 ; -1.805 ; Rise       ; clk             ;
+; piece_1DH            ; clk        ; -0.975 ; -1.526 ; Rise       ; clk             ;
+; piece_2DH            ; clk        ; -1.322 ; -1.955 ; Rise       ; clk             ;
+; piece_5DH            ; clk        ; -1.258 ; -1.789 ; Rise       ; clk             ;
+; piece_10DH           ; clk        ; -1.182 ; -1.720 ; Rise       ; clk             ;
+; reset                ; clk        ; -0.058 ; -0.223 ; Rise       ; clk             ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; cafe_delivre         ; clk        ; 6.321 ; 6.287 ; Rise       ; clk             ;
+; cafe_pret            ; clk        ; 6.331 ; 6.297 ; Rise       ; clk             ;
+; monnaie_exacte       ; clk        ; 6.089 ; 6.026 ; Rise       ; clk             ;
+; monnaie_excedentaire ; clk        ; 6.498 ; 6.508 ; Rise       ; clk             ;
+; monnaie_insuffisante ; clk        ; 6.136 ; 6.067 ; Rise       ; clk             ;
+; reste_monnaie[*]     ; clk        ; 7.283 ; 7.270 ; Rise       ; clk             ;
+;  reste_monnaie[0]    ; clk        ; 5.980 ; 5.909 ; Rise       ; clk             ;
+;  reste_monnaie[1]    ; clk        ; 7.283 ; 7.270 ; Rise       ; clk             ;
+;  reste_monnaie[2]    ; clk        ; 6.838 ; 6.830 ; Rise       ; clk             ;
+;  reste_monnaie[3]    ; clk        ; 6.001 ; 5.936 ; Rise       ; clk             ;
+; somme_monnaie[*]     ; clk        ; 6.626 ; 6.598 ; Rise       ; clk             ;
+;  somme_monnaie[0]    ; clk        ; 6.500 ; 6.440 ; Rise       ; clk             ;
+;  somme_monnaie[1]    ; clk        ; 6.626 ; 6.598 ; Rise       ; clk             ;
+;  somme_monnaie[2]    ; clk        ; 6.467 ; 6.458 ; Rise       ; clk             ;
+;  somme_monnaie[3]    ; clk        ; 6.521 ; 6.454 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                    ;
++----------------------+------------+-------+-------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------------+------------+-------+-------+------------+-----------------+
+; cafe_delivre         ; clk        ; 3.560 ; 3.646 ; Rise       ; clk             ;
+; cafe_pret            ; clk        ; 3.570 ; 3.656 ; Rise       ; clk             ;
+; monnaie_exacte       ; clk        ; 3.431 ; 3.477 ; Rise       ; clk             ;
+; monnaie_excedentaire ; clk        ; 3.738 ; 3.783 ; Rise       ; clk             ;
+; monnaie_insuffisante ; clk        ; 3.446 ; 3.480 ; Rise       ; clk             ;
+; reste_monnaie[*]     ; clk        ; 3.374 ; 3.398 ; Rise       ; clk             ;
+;  reste_monnaie[0]    ; clk        ; 3.374 ; 3.417 ; Rise       ; clk             ;
+;  reste_monnaie[1]    ; clk        ; 4.244 ; 4.305 ; Rise       ; clk             ;
+;  reste_monnaie[2]    ; clk        ; 4.007 ; 4.043 ; Rise       ; clk             ;
+;  reste_monnaie[3]    ; clk        ; 3.379 ; 3.398 ; Rise       ; clk             ;
+; somme_monnaie[*]     ; clk        ; 3.664 ; 3.729 ; Rise       ; clk             ;
+;  somme_monnaie[0]    ; clk        ; 3.664 ; 3.735 ; Rise       ; clk             ;
+;  somme_monnaie[1]    ; clk        ; 3.801 ; 3.847 ; Rise       ; clk             ;
+;  somme_monnaie[2]    ; clk        ; 3.700 ; 3.729 ; Rise       ; clk             ;
+;  somme_monnaie[3]    ; clk        ; 3.677 ; 3.751 ; Rise       ; clk             ;
++----------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                           ;
++----------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin                  ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++----------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; cafe_pret            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; monnaie_insuffisante ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; monnaie_exacte       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; monnaie_excedentaire ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; reste_monnaie[0]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; reste_monnaie[1]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; reste_monnaie[2]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; reste_monnaie[3]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; somme_monnaie[0]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; somme_monnaie[1]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; somme_monnaie[2]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; somme_monnaie[3]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; cafe_delivre         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_NCEO~        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++----------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++-------------------------------------------------------------------------+
+; Input Transition Times                                                  ;
++----------------------+--------------+-----------------+-----------------+
+; Pin                  ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++----------------------+--------------+-----------------+-----------------+
+; bouton_Cafe_Noir     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; reset                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; bouton_Cappuccino    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; bouton_Cafe_Lait     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; bouton_Lait_Chocolat ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; piece_10DH           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; piece_5DH            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; piece_1DH            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; piece_2DH            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO~        ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_NCSO~        ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++----------------------+--------------+-----------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++----------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                  ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++----------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; cafe_pret            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; monnaie_insuffisante ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; monnaie_exacte       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00339 V          ; 0.206 V                              ; 0.007 V                              ; 2.77e-10 s                  ; 3.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00339 V         ; 0.206 V                             ; 0.007 V                             ; 2.77e-10 s                 ; 3.24e-10 s                 ; Yes                       ; Yes                       ;
+; monnaie_excedentaire ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
+; reste_monnaie[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; reste_monnaie[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.34 V              ; -0.00668 V          ; 0.218 V                              ; 0.076 V                              ; 1.92e-09 s                  ; 1.81e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.34 V             ; -0.00668 V         ; 0.218 V                             ; 0.076 V                             ; 1.92e-09 s                 ; 1.81e-09 s                 ; No                        ; Yes                       ;
+; reste_monnaie[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.34 V              ; -0.00668 V          ; 0.218 V                              ; 0.076 V                              ; 1.92e-09 s                  ; 1.81e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.34 V             ; -0.00668 V         ; 0.218 V                             ; 0.076 V                             ; 1.92e-09 s                 ; 1.81e-09 s                 ; No                        ; Yes                       ;
+; reste_monnaie[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00339 V          ; 0.206 V                              ; 0.007 V                              ; 2.77e-10 s                  ; 3.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00339 V         ; 0.206 V                             ; 0.007 V                             ; 2.77e-10 s                 ; 3.24e-10 s                 ; Yes                       ; Yes                       ;
+; somme_monnaie[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.4 V               ; -0.00557 V          ; 0.238 V                              ; 0.014 V                              ; 2.9e-10 s                   ; 3.48e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.4 V              ; -0.00557 V         ; 0.238 V                             ; 0.014 V                             ; 2.9e-10 s                  ; 3.48e-10 s                 ; No                        ; Yes                       ;
+; somme_monnaie[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
+; somme_monnaie[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
+; somme_monnaie[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.4 V               ; -0.00557 V          ; 0.238 V                              ; 0.014 V                              ; 2.9e-10 s                   ; 3.48e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.4 V              ; -0.00557 V         ; 0.238 V                             ; 0.014 V                             ; 2.9e-10 s                  ; 3.48e-10 s                 ; No                        ; Yes                       ;
+; cafe_delivre         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_NCEO~        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.76e-09 V                   ; 2.4 V               ; -0.034 V            ; 0.102 V                              ; 0.065 V                              ; 2.49e-10 s                  ; 3.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.76e-09 V                  ; 2.4 V              ; -0.034 V           ; 0.102 V                             ; 0.065 V                             ; 2.49e-10 s                 ; 3.49e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.94e-09 V                   ; 2.39 V              ; -0.0344 V           ; 0.156 V                              ; 0.089 V                              ; 2.68e-10 s                  ; 2.6e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.94e-09 V                  ; 2.39 V             ; -0.0344 V          ; 0.156 V                             ; 0.089 V                             ; 2.68e-10 s                 ; 2.6e-10 s                  ; Yes                       ; Yes                       ;
++----------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++----------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                  ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++----------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; cafe_pret            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; monnaie_insuffisante ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; monnaie_exacte       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.37 V              ; -0.00606 V          ; 0.107 V                              ; 0.021 V                              ; 4.26e-10 s                  ; 4.03e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.37 V             ; -0.00606 V         ; 0.107 V                             ; 0.021 V                             ; 4.26e-10 s                 ; 4.03e-10 s                 ; Yes                       ; Yes                       ;
+; monnaie_excedentaire ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
+; reste_monnaie[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; reste_monnaie[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.33 V              ; -0.00286 V          ; 0.193 V                              ; 0.042 V                              ; 2.32e-09 s                  ; 2.21e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.33 V             ; -0.00286 V         ; 0.193 V                             ; 0.042 V                             ; 2.32e-09 s                 ; 2.21e-09 s                 ; Yes                       ; Yes                       ;
+; reste_monnaie[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.33 V              ; -0.00286 V          ; 0.193 V                              ; 0.042 V                              ; 2.32e-09 s                  ; 2.21e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.33 V             ; -0.00286 V         ; 0.193 V                             ; 0.042 V                             ; 2.32e-09 s                 ; 2.21e-09 s                 ; Yes                       ; Yes                       ;
+; reste_monnaie[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.37 V              ; -0.00606 V          ; 0.107 V                              ; 0.021 V                              ; 4.26e-10 s                  ; 4.03e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.37 V             ; -0.00606 V         ; 0.107 V                             ; 0.021 V                             ; 4.26e-10 s                 ; 4.03e-10 s                 ; Yes                       ; Yes                       ;
+; somme_monnaie[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.36 V              ; -0.00623 V          ; 0.121 V                              ; 0.03 V                               ; 4.4e-10 s                   ; 4.28e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.36 V             ; -0.00623 V         ; 0.121 V                             ; 0.03 V                              ; 4.4e-10 s                  ; 4.28e-10 s                 ; Yes                       ; Yes                       ;
+; somme_monnaie[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
+; somme_monnaie[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
+; somme_monnaie[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.36 V              ; -0.00623 V          ; 0.121 V                              ; 0.03 V                               ; 4.4e-10 s                   ; 4.28e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.36 V             ; -0.00623 V         ; 0.121 V                             ; 0.03 V                              ; 4.4e-10 s                  ; 4.28e-10 s                 ; Yes                       ; Yes                       ;
+; cafe_delivre         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_NCEO~        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.93e-07 V                   ; 2.37 V              ; -0.0278 V           ; 0.106 V                              ; 0.115 V                              ; 2.69e-10 s                  ; 4.05e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.93e-07 V                  ; 2.37 V             ; -0.0278 V          ; 0.106 V                             ; 0.115 V                             ; 2.69e-10 s                 ; 4.05e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.76e-07 V                   ; 2.36 V              ; -0.00439 V          ; 0.088 V                              ; 0.007 V                              ; 4.05e-10 s                  ; 3.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.76e-07 V                  ; 2.36 V             ; -0.00439 V         ; 0.088 V                             ; 0.007 V                             ; 4.05e-10 s                 ; 3.35e-10 s                 ; Yes                       ; Yes                       ;
++----------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++----------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin                  ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++----------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; cafe_pret            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; monnaie_insuffisante ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; monnaie_exacte       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.73 V              ; -0.0205 V           ; 0.17 V                               ; 0.027 V                              ; 2.58e-10 s                  ; 2.57e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.73 V             ; -0.0205 V          ; 0.17 V                              ; 0.027 V                             ; 2.58e-10 s                 ; 2.57e-10 s                 ; Yes                       ; Yes                       ;
+; monnaie_excedentaire ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
+; reste_monnaie[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; reste_monnaie[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.65 V              ; -0.0115 V           ; 0.219 V                              ; 0.115 V                              ; 1.64e-09 s                  ; 1.57e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.65 V             ; -0.0115 V          ; 0.219 V                             ; 0.115 V                             ; 1.64e-09 s                 ; 1.57e-09 s                 ; No                        ; Yes                       ;
+; reste_monnaie[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.65 V              ; -0.0115 V           ; 0.219 V                              ; 0.115 V                              ; 1.64e-09 s                  ; 1.57e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.65 V             ; -0.0115 V          ; 0.219 V                             ; 0.115 V                             ; 1.64e-09 s                 ; 1.57e-09 s                 ; No                        ; Yes                       ;
+; reste_monnaie[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.73 V              ; -0.0205 V           ; 0.17 V                               ; 0.027 V                              ; 2.58e-10 s                  ; 2.57e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.73 V             ; -0.0205 V          ; 0.17 V                              ; 0.027 V                             ; 2.58e-10 s                 ; 2.57e-10 s                 ; Yes                       ; Yes                       ;
+; somme_monnaie[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.72 V              ; -0.0199 V           ; 0.186 V                              ; 0.027 V                              ; 2.63e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.72 V             ; -0.0199 V          ; 0.186 V                             ; 0.027 V                             ; 2.63e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; somme_monnaie[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
+; somme_monnaie[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
+; somme_monnaie[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.72 V              ; -0.0199 V           ; 0.186 V                              ; 0.027 V                              ; 2.63e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.72 V             ; -0.0199 V          ; 0.186 V                             ; 0.027 V                             ; 2.63e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
+; cafe_delivre         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_NCEO~        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.06e-08 V                   ; 2.86 V              ; -0.0341 V           ; 0.364 V                              ; 0.046 V                              ; 1.17e-10 s                  ; 2.6e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 3.06e-08 V                  ; 2.86 V             ; -0.0341 V          ; 0.364 V                             ; 0.046 V                             ; 1.17e-10 s                 ; 2.6e-10 s                  ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.81e-08 V                   ; 2.72 V              ; -0.0542 V           ; 0.144 V                              ; 0.087 V                              ; 2.55e-10 s                  ; 2.14e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.81e-08 V                  ; 2.72 V             ; -0.0542 V          ; 0.144 V                             ; 0.087 V                             ; 2.55e-10 s                 ; 2.14e-10 s                 ; Yes                       ; Yes                       ;
++----------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 103      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 103      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 55    ; 55   ;
+; Unconstrained Output Ports      ; 13    ; 13   ;
+; Unconstrained Output Port Paths ; 13    ; 13   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Sat Apr 06 10:48:42 2024
+Info: Command: quartus_sta Distributeur_Cafe -c Distributeur_Cafe
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Distributeur_Cafe.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.443
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.443             -14.165 clk 
+Info (332146): Worst-case hold slack is 0.339
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.339               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -19.000 clk 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.185
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.185             -10.975 clk 
+Info (332146): Worst-case hold slack is 0.296
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.296               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -19.000 clk 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.365
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.365              -2.381 clk 
+Info (332146): Worst-case hold slack is 0.177
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.177               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -19.504 clk 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4632 megabytes
+    Info: Processing ended: Sat Apr 06 10:48:51 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:07
+
+

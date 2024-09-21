@@ -1,0 +1,594 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "04/06/2024 11:05:29"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    Distributeur_Cafe
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Distributeur_Cafe_vlg_sample_tst(
+	bouton_Cafe_Lait,
+	bouton_Cafe_Noir,
+	bouton_Cappuccino,
+	bouton_Lait_Chocolat,
+	clk,
+	piece_1DH,
+	piece_2DH,
+	piece_5DH,
+	piece_10DH,
+	reset,
+	sampler_tx
+);
+input  bouton_Cafe_Lait;
+input  bouton_Cafe_Noir;
+input  bouton_Cappuccino;
+input  bouton_Lait_Chocolat;
+input  clk;
+input  piece_1DH;
+input  piece_2DH;
+input  piece_5DH;
+input  piece_10DH;
+input  reset;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(bouton_Cafe_Lait or bouton_Cafe_Noir or bouton_Cappuccino or bouton_Lait_Chocolat or clk or piece_1DH or piece_2DH or piece_5DH or piece_10DH or reset)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module Distributeur_Cafe_vlg_check_tst (
+	cafe_delivre,
+	cafe_pret,
+	monnaie_exacte,
+	monnaie_excedentaire,
+	monnaie_insuffisante,
+	reste_monnaie,
+	somme_monnaie,
+	sampler_rx
+);
+input  cafe_delivre;
+input  cafe_pret;
+input  monnaie_exacte;
+input  monnaie_excedentaire;
+input  monnaie_insuffisante;
+input [3:0] reste_monnaie;
+input [3:0] somme_monnaie;
+input sampler_rx;
+
+reg  cafe_delivre_expected;
+reg  cafe_pret_expected;
+reg  monnaie_exacte_expected;
+reg  monnaie_excedentaire_expected;
+reg  monnaie_insuffisante_expected;
+reg [3:0] reste_monnaie_expected;
+reg [3:0] somme_monnaie_expected;
+
+reg  cafe_delivre_prev;
+reg  cafe_pret_prev;
+reg  monnaie_exacte_prev;
+reg  monnaie_excedentaire_prev;
+reg  monnaie_insuffisante_prev;
+reg [3:0] reste_monnaie_prev;
+reg [3:0] somme_monnaie_prev;
+
+reg  cafe_delivre_expected_prev;
+reg  cafe_pret_expected_prev;
+reg  monnaie_exacte_expected_prev;
+reg  monnaie_excedentaire_expected_prev;
+reg  monnaie_insuffisante_expected_prev;
+reg [3:0] reste_monnaie_expected_prev;
+reg [3:0] somme_monnaie_expected_prev;
+
+reg  last_cafe_delivre_exp;
+reg  last_cafe_pret_exp;
+reg  last_monnaie_exacte_exp;
+reg  last_monnaie_excedentaire_exp;
+reg  last_monnaie_insuffisante_exp;
+reg [3:0] last_reste_monnaie_exp;
+reg [3:0] last_somme_monnaie_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:7] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 7'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	cafe_delivre_prev = cafe_delivre;
+	cafe_pret_prev = cafe_pret;
+	monnaie_exacte_prev = monnaie_exacte;
+	monnaie_excedentaire_prev = monnaie_excedentaire;
+	monnaie_insuffisante_prev = monnaie_insuffisante;
+	reste_monnaie_prev = reste_monnaie;
+	somme_monnaie_prev = somme_monnaie;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	cafe_delivre_expected_prev = cafe_delivre_expected;
+	cafe_pret_expected_prev = cafe_pret_expected;
+	monnaie_exacte_expected_prev = monnaie_exacte_expected;
+	monnaie_excedentaire_expected_prev = monnaie_excedentaire_expected;
+	monnaie_insuffisante_expected_prev = monnaie_insuffisante_expected;
+	reste_monnaie_expected_prev = reste_monnaie_expected;
+	somme_monnaie_expected_prev = somme_monnaie_expected;
+end
+
+
+
+// expected monnaie_exacte
+initial
+begin
+	monnaie_exacte_expected = 1'bX;
+end 
+
+// expected monnaie_excedentaire
+initial
+begin
+	monnaie_excedentaire_expected = 1'bX;
+end 
+
+// expected monnaie_insuffisante
+initial
+begin
+	monnaie_insuffisante_expected = 1'bX;
+end 
+
+// expected cafe_pret
+initial
+begin
+	cafe_pret_expected = 1'bX;
+end 
+
+// expected cafe_delivre
+initial
+begin
+	cafe_delivre_expected = 1'bX;
+end 
+// expected reste_monnaie[ 3 ]
+initial
+begin
+	reste_monnaie_expected[3] = 1'bX;
+end 
+// expected reste_monnaie[ 2 ]
+initial
+begin
+	reste_monnaie_expected[2] = 1'bX;
+end 
+// expected reste_monnaie[ 1 ]
+initial
+begin
+	reste_monnaie_expected[1] = 1'bX;
+end 
+// expected reste_monnaie[ 0 ]
+initial
+begin
+	reste_monnaie_expected[0] = 1'bX;
+end 
+// expected somme_monnaie[ 3 ]
+initial
+begin
+	somme_monnaie_expected[3] = 1'bX;
+end 
+// expected somme_monnaie[ 2 ]
+initial
+begin
+	somme_monnaie_expected[2] = 1'bX;
+end 
+// expected somme_monnaie[ 1 ]
+initial
+begin
+	somme_monnaie_expected[1] = 1'bX;
+end 
+// expected somme_monnaie[ 0 ]
+initial
+begin
+	somme_monnaie_expected[0] = 1'bX;
+end 
+// generate trigger
+always @(cafe_delivre_expected or cafe_delivre or cafe_pret_expected or cafe_pret or monnaie_exacte_expected or monnaie_exacte or monnaie_excedentaire_expected or monnaie_excedentaire or monnaie_insuffisante_expected or monnaie_insuffisante or reste_monnaie_expected or reste_monnaie or somme_monnaie_expected or somme_monnaie)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected cafe_delivre = %b | expected cafe_pret = %b | expected monnaie_exacte = %b | expected monnaie_excedentaire = %b | expected monnaie_insuffisante = %b | expected reste_monnaie = %b | expected somme_monnaie = %b | ",cafe_delivre_expected_prev,cafe_pret_expected_prev,monnaie_exacte_expected_prev,monnaie_excedentaire_expected_prev,monnaie_insuffisante_expected_prev,reste_monnaie_expected_prev,somme_monnaie_expected_prev);
+	$display("| real cafe_delivre = %b | real cafe_pret = %b | real monnaie_exacte = %b | real monnaie_excedentaire = %b | real monnaie_insuffisante = %b | real reste_monnaie = %b | real somme_monnaie = %b | ",cafe_delivre_prev,cafe_pret_prev,monnaie_exacte_prev,monnaie_excedentaire_prev,monnaie_insuffisante_prev,reste_monnaie_prev,somme_monnaie_prev);
+`endif
+	if (
+		( cafe_delivre_expected_prev !== 1'bx ) && ( cafe_delivre_prev !== cafe_delivre_expected_prev )
+		&& ((cafe_delivre_expected_prev !== last_cafe_delivre_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cafe_delivre :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cafe_delivre_expected_prev);
+		$display ("     Real value = %b", cafe_delivre_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_cafe_delivre_exp = cafe_delivre_expected_prev;
+	end
+	if (
+		( cafe_pret_expected_prev !== 1'bx ) && ( cafe_pret_prev !== cafe_pret_expected_prev )
+		&& ((cafe_pret_expected_prev !== last_cafe_pret_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port cafe_pret :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", cafe_pret_expected_prev);
+		$display ("     Real value = %b", cafe_pret_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_cafe_pret_exp = cafe_pret_expected_prev;
+	end
+	if (
+		( monnaie_exacte_expected_prev !== 1'bx ) && ( monnaie_exacte_prev !== monnaie_exacte_expected_prev )
+		&& ((monnaie_exacte_expected_prev !== last_monnaie_exacte_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port monnaie_exacte :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", monnaie_exacte_expected_prev);
+		$display ("     Real value = %b", monnaie_exacte_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_monnaie_exacte_exp = monnaie_exacte_expected_prev;
+	end
+	if (
+		( monnaie_excedentaire_expected_prev !== 1'bx ) && ( monnaie_excedentaire_prev !== monnaie_excedentaire_expected_prev )
+		&& ((monnaie_excedentaire_expected_prev !== last_monnaie_excedentaire_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port monnaie_excedentaire :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", monnaie_excedentaire_expected_prev);
+		$display ("     Real value = %b", monnaie_excedentaire_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_monnaie_excedentaire_exp = monnaie_excedentaire_expected_prev;
+	end
+	if (
+		( monnaie_insuffisante_expected_prev !== 1'bx ) && ( monnaie_insuffisante_prev !== monnaie_insuffisante_expected_prev )
+		&& ((monnaie_insuffisante_expected_prev !== last_monnaie_insuffisante_exp) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port monnaie_insuffisante :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", monnaie_insuffisante_expected_prev);
+		$display ("     Real value = %b", monnaie_insuffisante_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_monnaie_insuffisante_exp = monnaie_insuffisante_expected_prev;
+	end
+	if (
+		( reste_monnaie_expected_prev[0] !== 1'bx ) && ( reste_monnaie_prev[0] !== reste_monnaie_expected_prev[0] )
+		&& ((reste_monnaie_expected_prev[0] !== last_reste_monnaie_exp[0]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port reste_monnaie[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", reste_monnaie_expected_prev);
+		$display ("     Real value = %b", reste_monnaie_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_reste_monnaie_exp[0] = reste_monnaie_expected_prev[0];
+	end
+	if (
+		( reste_monnaie_expected_prev[1] !== 1'bx ) && ( reste_monnaie_prev[1] !== reste_monnaie_expected_prev[1] )
+		&& ((reste_monnaie_expected_prev[1] !== last_reste_monnaie_exp[1]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port reste_monnaie[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", reste_monnaie_expected_prev);
+		$display ("     Real value = %b", reste_monnaie_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_reste_monnaie_exp[1] = reste_monnaie_expected_prev[1];
+	end
+	if (
+		( reste_monnaie_expected_prev[2] !== 1'bx ) && ( reste_monnaie_prev[2] !== reste_monnaie_expected_prev[2] )
+		&& ((reste_monnaie_expected_prev[2] !== last_reste_monnaie_exp[2]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port reste_monnaie[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", reste_monnaie_expected_prev);
+		$display ("     Real value = %b", reste_monnaie_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_reste_monnaie_exp[2] = reste_monnaie_expected_prev[2];
+	end
+	if (
+		( reste_monnaie_expected_prev[3] !== 1'bx ) && ( reste_monnaie_prev[3] !== reste_monnaie_expected_prev[3] )
+		&& ((reste_monnaie_expected_prev[3] !== last_reste_monnaie_exp[3]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port reste_monnaie[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", reste_monnaie_expected_prev);
+		$display ("     Real value = %b", reste_monnaie_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_reste_monnaie_exp[3] = reste_monnaie_expected_prev[3];
+	end
+	if (
+		( somme_monnaie_expected_prev[0] !== 1'bx ) && ( somme_monnaie_prev[0] !== somme_monnaie_expected_prev[0] )
+		&& ((somme_monnaie_expected_prev[0] !== last_somme_monnaie_exp[0]) ||
+			on_first_change[7])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port somme_monnaie[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", somme_monnaie_expected_prev);
+		$display ("     Real value = %b", somme_monnaie_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[7] = 1'b0;
+		last_somme_monnaie_exp[0] = somme_monnaie_expected_prev[0];
+	end
+	if (
+		( somme_monnaie_expected_prev[1] !== 1'bx ) && ( somme_monnaie_prev[1] !== somme_monnaie_expected_prev[1] )
+		&& ((somme_monnaie_expected_prev[1] !== last_somme_monnaie_exp[1]) ||
+			on_first_change[7])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port somme_monnaie[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", somme_monnaie_expected_prev);
+		$display ("     Real value = %b", somme_monnaie_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[7] = 1'b0;
+		last_somme_monnaie_exp[1] = somme_monnaie_expected_prev[1];
+	end
+	if (
+		( somme_monnaie_expected_prev[2] !== 1'bx ) && ( somme_monnaie_prev[2] !== somme_monnaie_expected_prev[2] )
+		&& ((somme_monnaie_expected_prev[2] !== last_somme_monnaie_exp[2]) ||
+			on_first_change[7])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port somme_monnaie[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", somme_monnaie_expected_prev);
+		$display ("     Real value = %b", somme_monnaie_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[7] = 1'b0;
+		last_somme_monnaie_exp[2] = somme_monnaie_expected_prev[2];
+	end
+	if (
+		( somme_monnaie_expected_prev[3] !== 1'bx ) && ( somme_monnaie_prev[3] !== somme_monnaie_expected_prev[3] )
+		&& ((somme_monnaie_expected_prev[3] !== last_somme_monnaie_exp[3]) ||
+			on_first_change[7])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port somme_monnaie[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", somme_monnaie_expected_prev);
+		$display ("     Real value = %b", somme_monnaie_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[7] = 1'b0;
+		last_somme_monnaie_exp[3] = somme_monnaie_expected_prev[3];
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module Distributeur_Cafe_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg bouton_Cafe_Lait;
+reg bouton_Cafe_Noir;
+reg bouton_Cappuccino;
+reg bouton_Lait_Chocolat;
+reg clk;
+reg piece_1DH;
+reg piece_2DH;
+reg piece_5DH;
+reg piece_10DH;
+reg reset;
+// wires                                               
+wire cafe_delivre;
+wire cafe_pret;
+wire monnaie_exacte;
+wire monnaie_excedentaire;
+wire monnaie_insuffisante;
+wire [3:0] reste_monnaie;
+wire [3:0] somme_monnaie;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+Distributeur_Cafe i1 (
+// port map - connection between master ports and signals/registers   
+	.bouton_Cafe_Lait(bouton_Cafe_Lait),
+	.bouton_Cafe_Noir(bouton_Cafe_Noir),
+	.bouton_Cappuccino(bouton_Cappuccino),
+	.bouton_Lait_Chocolat(bouton_Lait_Chocolat),
+	.cafe_delivre(cafe_delivre),
+	.cafe_pret(cafe_pret),
+	.clk(clk),
+	.monnaie_exacte(monnaie_exacte),
+	.monnaie_excedentaire(monnaie_excedentaire),
+	.monnaie_insuffisante(monnaie_insuffisante),
+	.piece_1DH(piece_1DH),
+	.piece_2DH(piece_2DH),
+	.piece_5DH(piece_5DH),
+	.piece_10DH(piece_10DH),
+	.reset(reset),
+	.reste_monnaie(reste_monnaie),
+	.somme_monnaie(somme_monnaie)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #10000 1'b1;
+	#10000;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b0;
+	reset = #120000 1'b1;
+	reset = #10000 1'b0;
+	reset = #150000 1'b1;
+	reset = #10000 1'b0;
+	reset = #170000 1'b1;
+	reset = #10000 1'b0;
+end 
+
+// piece_1DH
+initial
+begin
+	piece_1DH = 1'b0;
+	piece_1DH = #300000 1'b1;
+	piece_1DH = #20000 1'b0;
+end 
+
+// piece_2DH
+initial
+begin
+	piece_2DH = 1'b1;
+	piece_2DH = #20000 1'b0;
+end 
+
+// piece_5DH
+initial
+begin
+	piece_5DH = 1'b0;
+	piece_5DH = #140000 1'b1;
+	piece_5DH = #20000 1'b0;
+	piece_5DH = #320000 1'b1;
+	piece_5DH = #20000 1'b0;
+end 
+
+// piece_10DH
+initial
+begin
+	piece_10DH = 1'b0;
+	piece_10DH = #320000 1'b1;
+	piece_10DH = #20000 1'b0;
+end 
+
+// bouton_Cafe_Lait
+initial
+begin
+	bouton_Cafe_Lait = 1'b0;
+	bouton_Cafe_Lait = #20000 1'b1;
+	bouton_Cafe_Lait = #20000 1'b0;
+end 
+
+// bouton_Cafe_Noir
+initial
+begin
+	bouton_Cafe_Noir = 1'b0;
+	bouton_Cafe_Noir = #340000 1'b1;
+	bouton_Cafe_Noir = #20000 1'b0;
+end 
+
+// bouton_Cappuccino
+initial
+begin
+	bouton_Cappuccino = 1'b0;
+	bouton_Cappuccino = #160000 1'b1;
+	bouton_Cappuccino = #20000 1'b0;
+end 
+
+// bouton_Lait_Chocolat
+initial
+begin
+	bouton_Lait_Chocolat = 1'b0;
+	bouton_Lait_Chocolat = #500000 1'b1;
+	bouton_Lait_Chocolat = #20000 1'b0;
+end 
+
+Distributeur_Cafe_vlg_sample_tst tb_sample (
+	.bouton_Cafe_Lait(bouton_Cafe_Lait),
+	.bouton_Cafe_Noir(bouton_Cafe_Noir),
+	.bouton_Cappuccino(bouton_Cappuccino),
+	.bouton_Lait_Chocolat(bouton_Lait_Chocolat),
+	.clk(clk),
+	.piece_1DH(piece_1DH),
+	.piece_2DH(piece_2DH),
+	.piece_5DH(piece_5DH),
+	.piece_10DH(piece_10DH),
+	.reset(reset),
+	.sampler_tx(sampler)
+);
+
+Distributeur_Cafe_vlg_check_tst tb_out(
+	.cafe_delivre(cafe_delivre),
+	.cafe_pret(cafe_pret),
+	.monnaie_exacte(monnaie_exacte),
+	.monnaie_excedentaire(monnaie_excedentaire),
+	.monnaie_insuffisante(monnaie_insuffisante),
+	.reste_monnaie(reste_monnaie),
+	.somme_monnaie(somme_monnaie),
+	.sampler_rx(sampler)
+);
+endmodule
+

@@ -1,0 +1,1155 @@
+$comment
+	File created using the following command:
+		vcd file Distributeur_Cafe.msim.vcd -direction
+$end
+$date
+	Sat Apr 06 11:05:36 2024
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module Distributeur_Cafe_vlg_vec_tst $end
+$var reg 1 ! bouton_Cafe_Lait $end
+$var reg 1 " bouton_Cafe_Noir $end
+$var reg 1 # bouton_Cappuccino $end
+$var reg 1 $ bouton_Lait_Chocolat $end
+$var reg 1 % clk $end
+$var reg 1 & piece_1DH $end
+$var reg 1 ' piece_2DH $end
+$var reg 1 ( piece_5DH $end
+$var reg 1 ) piece_10DH $end
+$var reg 1 * reset $end
+$var wire 1 + cafe_delivre $end
+$var wire 1 , cafe_pret $end
+$var wire 1 - monnaie_exacte $end
+$var wire 1 . monnaie_excedentaire $end
+$var wire 1 / monnaie_insuffisante $end
+$var wire 1 0 reste_monnaie [3] $end
+$var wire 1 1 reste_monnaie [2] $end
+$var wire 1 2 reste_monnaie [1] $end
+$var wire 1 3 reste_monnaie [0] $end
+$var wire 1 4 somme_monnaie [3] $end
+$var wire 1 5 somme_monnaie [2] $end
+$var wire 1 6 somme_monnaie [1] $end
+$var wire 1 7 somme_monnaie [0] $end
+$var wire 1 8 sampler $end
+$scope module i1 $end
+$var wire 1 9 gnd $end
+$var wire 1 : vcc $end
+$var wire 1 ; unknown $end
+$var tri1 1 < devclrn $end
+$var tri1 1 = devpor $end
+$var tri1 1 > devoe $end
+$var wire 1 ? cafe_pret~output_o $end
+$var wire 1 @ monnaie_insuffisante~output_o $end
+$var wire 1 A monnaie_exacte~output_o $end
+$var wire 1 B monnaie_excedentaire~output_o $end
+$var wire 1 C reste_monnaie[0]~output_o $end
+$var wire 1 D reste_monnaie[1]~output_o $end
+$var wire 1 E reste_monnaie[2]~output_o $end
+$var wire 1 F reste_monnaie[3]~output_o $end
+$var wire 1 G somme_monnaie[0]~output_o $end
+$var wire 1 H somme_monnaie[1]~output_o $end
+$var wire 1 I somme_monnaie[2]~output_o $end
+$var wire 1 J somme_monnaie[3]~output_o $end
+$var wire 1 K cafe_delivre~output_o $end
+$var wire 1 L clk~input_o $end
+$var wire 1 M clk~inputclkctrl_outclk $end
+$var wire 1 N piece_5DH~input_o $end
+$var wire 1 O piece_2DH~input_o $end
+$var wire 1 P piece_1DH~input_o $end
+$var wire 1 Q total_insere~11_combout $end
+$var wire 1 R piece_10DH~input_o $end
+$var wire 1 S total_insere~8_combout $end
+$var wire 1 T total_insere~12_combout $end
+$var wire 1 U reset~input_o $end
+$var wire 1 V reset~inputclkctrl_outclk $end
+$var wire 1 W total_insere[1]~19_combout $end
+$var wire 1 X bouton_Cafe_Noir~input_o $end
+$var wire 1 Y total_insere[2]~9_combout $end
+$var wire 1 Z total_insere[2]~18_combout $end
+$var wire 1 [ total_insere[2]~10_combout $end
+$var wire 1 \ cafe_delivre~2_combout $end
+$var wire 1 ] total_insere~20_combout $end
+$var wire 1 ^ total_insere~21_combout $end
+$var wire 1 _ total_insere~13_combout $end
+$var wire 1 ` total_insere~14_combout $end
+$var wire 1 a total_insere~15_combout $end
+$var wire 1 b total_insere~16_combout $end
+$var wire 1 c total_insere~17_combout $end
+$var wire 1 d cafe_delivre~5_combout $end
+$var wire 1 e bouton_Lait_Chocolat~input_o $end
+$var wire 1 f bouton_Cafe_Lait~input_o $end
+$var wire 1 g bouton_Cappuccino~input_o $end
+$var wire 1 h LessThan1~0_combout $end
+$var wire 1 i cafe_delivre~3_combout $end
+$var wire 1 j cafe_delivre~4_combout $end
+$var wire 1 k cafe_delivre~reg0_q $end
+$var wire 1 l monnaie_insuffisante~0_combout $end
+$var wire 1 m reste_monnaie~2_combout $end
+$var wire 1 n LessThan0~0_combout $end
+$var wire 1 o monnaie_insuffisante~1_combout $end
+$var wire 1 p monnaie_insuffisante~2_combout $end
+$var wire 1 q monnaie_insuffisante~reg0_q $end
+$var wire 1 r monnaie_exacte~0_combout $end
+$var wire 1 s monnaie_exacte~1_combout $end
+$var wire 1 t monnaie_exacte~reg0_q $end
+$var wire 1 u monnaie_excedentaire~0_combout $end
+$var wire 1 v monnaie_excedentaire~reg0_q $end
+$var wire 1 w reste_monnaie~3_combout $end
+$var wire 1 x reste_monnaie~4_combout $end
+$var wire 1 y process_0~0_combout $end
+$var wire 1 z reste_monnaie~5_combout $end
+$var wire 1 { reste_monnaie~6_combout $end
+$var wire 1 | reste_monnaie[0]~reg0_q $end
+$var wire 1 } reste_monnaie[1]~7_combout $end
+$var wire 1 ~ Add4~0_combout $end
+$var wire 1 !! reste_monnaie[1]~0_combout $end
+$var wire 1 "! reste_monnaie[1]~8_combout $end
+$var wire 1 #! reste_monnaie[1]~9_combout $end
+$var wire 1 $! reste_monnaie[1]~10_combout $end
+$var wire 1 %! reste_monnaie[1]~reg0_q $end
+$var wire 1 &! Add5~0_combout $end
+$var wire 1 '! reste_monnaie[2]~1_combout $end
+$var wire 1 (! Add4~1_combout $end
+$var wire 1 )! reste_monnaie[2]~reg0_q $end
+$var wire 1 *! reste_monnaie~12_combout $end
+$var wire 1 +! reste_monnaie~11_combout $end
+$var wire 1 ,! reste_monnaie~13_combout $end
+$var wire 1 -! reste_monnaie[3]~reg0_q $end
+$var wire 1 .! somme_monnaie[0]~reg0feeder_combout $end
+$var wire 1 /! somme_monnaie[0]~reg0_q $end
+$var wire 1 0! somme_monnaie[1]~reg0feeder_combout $end
+$var wire 1 1! somme_monnaie[1]~reg0_q $end
+$var wire 1 2! somme_monnaie[2]~reg0feeder_combout $end
+$var wire 1 3! somme_monnaie[2]~reg0_q $end
+$var wire 1 4! somme_monnaie[3]~reg0feeder_combout $end
+$var wire 1 5! somme_monnaie[3]~reg0_q $end
+$var wire 1 6! total_insere [3] $end
+$var wire 1 7! total_insere [2] $end
+$var wire 1 8! total_insere [1] $end
+$var wire 1 9! total_insere [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+0&
+1'
+0(
+0)
+0*
+0+
+0,
+0-
+0.
+0/
+03
+02
+01
+00
+07
+06
+05
+04
+x8
+09
+1:
+x;
+1<
+1=
+1>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+1O
+0P
+1Q
+0R
+0S
+0T
+0U
+0V
+1W
+0X
+1Y
+0Z
+0[
+0\
+1]
+1^
+1_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+1h
+0i
+0j
+0k
+0l
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+0v
+0w
+0x
+1y
+0z
+1{
+0|
+1}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+0&!
+1'!
+1(!
+0)!
+0*!
+1+!
+1,!
+0-!
+0.!
+0/!
+00!
+01!
+02!
+03!
+04!
+05!
+09!
+08!
+07!
+06!
+$end
+#10000
+1%
+1L
+1M
+08
+18!
+10!
+1&!
+1"!
+1!!
+1~
+1`
+1Z
+0W
+1[
+#20000
+0'
+1!
+0%
+0O
+1f
+0L
+0M
+18
+0_
+0^
+0]
+1S
+1#!
+1x
+1m
+1i
+1a
+0[
+1W
+1z
+1o
+1j
+0{
+1p
+#30000
+1%
+1L
+1M
+08
+11!
+1q
+1H
+1@
+16
+1/
+#40000
+0!
+0%
+0f
+0L
+0M
+18
+0#!
+0x
+0m
+0i
+0z
+0o
+0j
+1{
+#50000
+1%
+1L
+1M
+08
+#60000
+0%
+0L
+0M
+18
+#70000
+1%
+1L
+1M
+08
+#80000
+0%
+0L
+0M
+18
+#90000
+1%
+1L
+1M
+08
+#100000
+0%
+0L
+0M
+18
+#110000
+1%
+1L
+1M
+08
+#120000
+1*
+0%
+1U
+0L
+1V
+0M
+18
+08!
+0q
+00!
+0&!
+0"!
+0!!
+0~
+0`
+0Z
+0W
+0p
+0@
+0/
+0a
+#130000
+0*
+1%
+0U
+1L
+0V
+1M
+08
+01!
+0H
+06
+#140000
+1(
+0%
+1N
+0L
+0M
+18
+1]
+0Y
+1T
+0S
+0Q
+1Z
+1[
+#150000
+1%
+1L
+1M
+08
+17!
+19!
+12!
+1*!
+0(!
+0'!
+0y
+1w
+1r
+0h
+1d
+1a
+0[
+1.!
+1"!
+1~
+0{
+1_
+1W
+0T
+0,!
+1s
+1b
+1c
+#160000
+1#
+0(
+0%
+1g
+0N
+0L
+0M
+18
+1#!
+0}
+1i
+0]
+1Y
+1T
+1S
+1Q
+1$!
+1j
+0b
+0Z
+1[
+0W
+0c
+#170000
+1%
+1L
+1M
+08
+13!
+1/!
+1t
+1k
+1I
+1G
+1A
+1K
+1?
+15
+17
+1-
+1+
+1,
+#180000
+0#
+0%
+0g
+0L
+0M
+18
+0#!
+1}
+0i
+0$!
+0j
+#190000
+1%
+1L
+1M
+08
+#200000
+0%
+0L
+0M
+18
+#210000
+1%
+1L
+1M
+08
+#220000
+0%
+0L
+0M
+18
+#230000
+1%
+1L
+1M
+08
+#240000
+0%
+0L
+0M
+18
+#250000
+1%
+1L
+1M
+08
+#260000
+0%
+0L
+0M
+18
+#270000
+1%
+1L
+1M
+08
+#280000
+1*
+0%
+1U
+0L
+1V
+0M
+18
+09!
+07!
+0k
+0t
+0.!
+1(!
+0"!
+0~
+1{
+0w
+0r
+1h
+0_
+0T
+02!
+0*!
+1'!
+1y
+0d
+0a
+0[
+0K
+0?
+0A
+0+
+0,
+0-
+0s
+1,!
+#290000
+0*
+1%
+0U
+1L
+0V
+1M
+08
+03!
+0/!
+0I
+0G
+05
+07
+#300000
+1&
+0%
+1P
+0L
+0M
+18
+1^
+1]
+1T
+0S
+0Q
+#310000
+1%
+1L
+1M
+08
+19!
+1.!
+1&!
+1"!
+1~
+0{
+1_
+1W
+0T
+#320000
+1)
+0&
+0%
+1R
+0P
+0L
+0M
+18
+0]
+1T
+1Q
+1b
+1c
+#330000
+1%
+1L
+1M
+08
+16!
+18!
+1/!
+14!
+0,!
+0y
+1w
+1u
+0h
+1d
+0b
+10!
+0(!
+1!!
+0~
+1n
+1`
+1Z
+0W
+1G
+17
+0c
+1[
+#340000
+1"
+0)
+0%
+1X
+0R
+0L
+0M
+18
+1$!
+1j
+1\
+0^
+1S
+1,!
+1a
+1c
+0[
+1W
+#350000
+1%
+1L
+1M
+08
+15!
+11!
+1-!
+1v
+1k
+1J
+1H
+1F
+1B
+1K
+1?
+14
+16
+10
+1.
+1+
+1,
+#360000
+0"
+0%
+0X
+0L
+0M
+18
+0$!
+0\
+0,!
+0j
+#370000
+1%
+1L
+1M
+08
+#380000
+0%
+0L
+0M
+18
+#390000
+1%
+1L
+1M
+08
+#400000
+0%
+0L
+0M
+18
+#410000
+1%
+1L
+1M
+08
+#420000
+0%
+0L
+0M
+18
+#430000
+1%
+1L
+1M
+08
+#440000
+0%
+0L
+0M
+18
+#450000
+1%
+1L
+1M
+08
+#460000
+1*
+0%
+1U
+0L
+1V
+0M
+18
+09!
+08!
+06!
+0k
+0v
+0-!
+0.!
+1(!
+0&!
+0"!
+1{
+0w
+0n
+1h
+0_
+0Z
+0W
+0T
+00!
+0!!
+0u
+0`
+04!
+1,!
+1y
+0d
+0c
+0K
+0?
+0B
+0F
+0+
+0,
+0.
+00
+0a
+#470000
+0*
+1%
+0U
+1L
+0V
+1M
+08
+05!
+01!
+0/!
+0J
+0H
+0G
+04
+06
+07
+#480000
+1(
+0%
+1N
+0L
+0M
+18
+1]
+0Y
+1T
+0S
+0Q
+1Z
+1[
+#490000
+1%
+1L
+1M
+08
+17!
+19!
+12!
+1*!
+0(!
+0'!
+0y
+1w
+1r
+0h
+1d
+1a
+0[
+1.!
+1"!
+1~
+0{
+1_
+1W
+0T
+0,!
+1s
+1b
+1c
+#500000
+1$
+0(
+0%
+1e
+0N
+0L
+0M
+18
+1#!
+1x
+1m
+1i
+0]
+1Y
+1T
+1S
+1Q
+1$!
+1{
+1j
+0b
+0Z
+1[
+0W
+0c
+#510000
+1%
+1L
+1M
+08
+13!
+1/!
+1|
+1t
+1k
+1z
+1I
+1G
+1C
+1A
+1K
+1?
+15
+17
+13
+1-
+1+
+1,
+#520000
+0$
+0%
+0e
+0L
+0M
+18
+0#!
+0x
+0m
+0i
+0$!
+0{
+0j
+#530000
+1%
+1L
+1M
+08
+#540000
+0%
+0L
+0M
+18
+#550000
+1%
+1L
+1M
+08
+#560000
+0%
+0L
+0M
+18
+#570000
+1%
+1L
+1M
+08
+#580000
+0%
+0L
+0M
+18
+#590000
+1%
+1L
+1M
+08
+#600000
+0%
+0L
+0M
+18
+#610000
+1%
+1L
+1M
+08
+#620000
+0%
+0L
+0M
+18
+#630000
+1%
+1L
+1M
+08
+#640000
+0%
+0L
+0M
+18
+#650000
+1%
+1L
+1M
+08
+#660000
+0%
+0L
+0M
+18
+#670000
+1%
+1L
+1M
+08
+#680000
+0%
+0L
+0M
+18
+#690000
+1%
+1L
+1M
+08
+#700000
+0%
+0L
+0M
+18
+#710000
+1%
+1L
+1M
+08
+#720000
+0%
+0L
+0M
+18
+#730000
+1%
+1L
+1M
+08
+#740000
+0%
+0L
+0M
+18
+#750000
+1%
+1L
+1M
+08
+#760000
+0%
+0L
+0M
+18
+#770000
+1%
+1L
+1M
+08
+#780000
+0%
+0L
+0M
+18
+#790000
+1%
+1L
+1M
+08
+#800000
+0%
+0L
+0M
+18
+#810000
+1%
+1L
+1M
+08
+#820000
+0%
+0L
+0M
+18
+#830000
+1%
+1L
+1M
+08
+#840000
+0%
+0L
+0M
+18
+#850000
+1%
+1L
+1M
+08
+#860000
+0%
+0L
+0M
+18
+#870000
+1%
+1L
+1M
+08
+#880000
+0%
+0L
+0M
+18
+#890000
+1%
+1L
+1M
+08
+#900000
+0%
+0L
+0M
+18
+#910000
+1%
+1L
+1M
+08
+#920000
+0%
+0L
+0M
+18
+#930000
+1%
+1L
+1M
+08
+#940000
+0%
+0L
+0M
+18
+#950000
+1%
+1L
+1M
+08
+#960000
+0%
+0L
+0M
+18
+#970000
+1%
+1L
+1M
+08
+#980000
+0%
+0L
+0M
+18
+#990000
+1%
+1L
+1M
+08
+#1000000

@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.1\project\simulation\qsim
+vDistributeur_Cafe
+Z1 !s100 35hWKVz2JJUQ>l?]VH>=E0
+Z2 II684M:bK`Z]QXa:?ol@bM0
+Z3 VzJ8czR[WUH4]lN?oam^H60
+Z4 dC:\altera\13.1\project\simulation\qsim
+Z5 w1712401533
+Z6 8Distributeur_Cafe.vo
+Z7 FDistributeur_Cafe.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|Distributeur_Cafe.vo|
+Z10 o-work work -O0
+Z11 n@distributeur_@cafe
+!i10b 1
+!s85 0
+Z12 !s108 1712401535.120000
+Z13 !s107 Distributeur_Cafe.vo|
+!s101 -O0
+vDistributeur_Cafe_vlg_check_tst
+!i10b 1
+Z14 !s100 kMhQd_N6gn6INI82LaCdQ2
+Z15 IDlTT]`0lAYgMl^`M1fJXj3
+Z16 V=B7@R:CeUBUk936zk4d002
+R4
+Z17 w1712401529
+Z18 8Simulation.vwf.vt
+Z19 FSimulation.vwf.vt
+L0 75
+R8
+r1
+!s85 0
+31
+Z20 !s108 1712401535.401000
+Z21 !s107 Simulation.vwf.vt|
+Z22 !s90 -work|work|Simulation.vwf.vt|
+!s101 -O0
+R10
+Z23 n@distributeur_@cafe_vlg_check_tst
+vDistributeur_Cafe_vlg_sample_tst
+!i10b 1
+Z24 !s100 ReZk=dNS8AMJZzB7X]XD03
+Z25 IQHMMC9RFFIQ4U>];T0JQC3
+Z26 VnFfg74nBMR;`]L]DdBDce1
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@distributeur_@cafe_vlg_sample_tst
+vDistributeur_Cafe_vlg_vec_tst
+!i10b 1
+!s100 CW?ZHlP06cE1^9BJ9UY]P3
+ILa<?l3WQzQIZj^HkcRk`R0
+Z28 V1@haLC]U@8OOAKzN>l60<3
+R4
+R17
+R18
+R19
+Z29 L0 438
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@distributeur_@cafe_vlg_vec_tst
